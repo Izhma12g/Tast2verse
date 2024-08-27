@@ -1,0 +1,264 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Helvetica";
+    font-weight: bold;
+    background-color: #F5E6CC;
+    width: 100%;
+}
+
+
+/* ==================================== NAVBAR ==================================== */
+.navbar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 10vh;
+    background: #333333;
+    margin-bottom: 5.3vh;
+}
+
+.navTxt {
+    color: #ECAB55;
+    font-size: 1.5vw;
+    text-align: left;
+    margin-right: 2.13vw;
+}
+
+.navLogo {
+    margin-left: 1.15vw;
+    margin-right: 2vw;
+    width: 11vw;
+    display: block;
+}
+
+input {
+    padding-left: 1vw;
+    margin-left: 11vw;
+    width: 27.56vw;
+    height: 5vh;
+    background: #FFFFFF;
+    color: #7A7A7A;
+    border-color: #232323;
+    border-width: 0.1vw;
+    border-style: solid;
+    border-radius: 2vw;
+    font-weight: 400;
+    font-size: 1.17vw;
+    text-align: left;
+}
+
+
+
+/* ==================================== MAIN ==================================== */
+.trending {
+    width: 60vw;  /* 1158px / 1920px * 100 */
+	height: 32.89vh;
+    background: #E6D9AB;
+    border-color: #000000;
+    border-width: 0.1vw;
+    border-style: solid;
+    border-radius: 1.3vw;
+    display: flex;
+}
+
+.trending p, .trending a {
+    font-family: "Open Sans";
+    font-size: 0.9vw;
+    margin: 1.1vw;
+    color: #333333;
+    line-height: 1.6;
+}
+
+.trendingImg {
+    width: 55%;
+    object-fit: cover;
+    height: 100%;
+    border-radius: 1.21vw 0 0 1.21vw;
+}
+
+.trendTxt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.slogan {
+    width: 54.89vw;
+    color: #000000;
+    font-size: 2.19vw;
+    text-align: center;
+    padding: 2vw 0;
+}
+
+.dinner {
+    width: 14.5vw;
+    height: 31.5vh; 
+    box-shadow: -0.2vw 0.4vh 0.21vw rgb(0, 0, 0);
+    background: #00000000;
+    border-radius: 1.04vw;
+    font-size: 1.04vw;
+}
+
+.left {
+    padding-left: 5.5vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2.19vw;
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.links img {
+    object-fit: cover;
+}
+
+.links a {
+    text-decoration: none;
+}
+
+.links p {
+    font-size: 1.04vw;
+    color: #000000;
+    text-align: center;
+    background-color: #E6D9AB;
+    padding: 0.4vw 3.12vw;
+    width: min-content;
+    line-height: normal;
+    margin-top: -1vw;
+    border-width: 0.15vw;
+    border-style: solid;
+    border-radius: 0.4vw;
+}
+
+.link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.link:hover {
+    transform: translateY(-0.2vw);
+}
+
+
+.right {
+    margin-left: 5.5vw;
+    margin-right: 5.5vw;
+    width: 100%;
+}
+
+.time {
+    font-size: 1vw;
+    color: #4F4F4F;
+    font-family: "Helvetica";
+    font-weight: 400;
+    margin-top: 0.4vw;
+    margin-bottom: 0.4vw;
+}
+
+.name {
+    font-family: "Open Sans";
+    font-weight: 400;
+    font-size: 1.35vw;
+}
+
+.title {
+    font-size: 1.5vw;
+}
+
+.latestAll {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 20vh;
+}
+
+.latestTxt {
+    margin-left: 0.8vw;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+h3 {
+    font-size: 1.35vw;
+    margin-top: 0.7vw;
+    margin-bottom: 0.4vw;
+}
+
+.rating h2 {
+    width: fit-content;
+    font-size: 1.04vw;
+    line-height: 1.5vw;
+    margin-left: 0.4vw;
+}
+a {
+    text-decoration: none;
+}
+
+
+.rating {
+    display: flex;
+    flex-direction: row;
+}
+.rating img {
+    object-fit: contain;
+}
+
+input:focus {
+    outline: none;
+}
+
+
+footer {
+    background-color: #e6d9abd2;
+    height: 10vh;
+    position: relative; /* Allows positioning of elements inside */
+    padding: 0 2.25vw;
+}
+
+footer p {
+    position: absolute;
+    left: 2.25vw;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: 400;
+    color: #4F4F4F;
+    margin: 0;
+}
+
+.icons {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.iLinks {
+    margin-top: 0.9vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.icons img {
+    height: 20px;
+}
