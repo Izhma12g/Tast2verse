@@ -227,7 +227,7 @@ input:focus {
 footer {
     background-color: #e6d9abd2;
     height: 10vh;
-    position: relative; /* Allows positioning of elements inside */
+    position: relative; 
     padding: 0 2.25vw;
 }
 
