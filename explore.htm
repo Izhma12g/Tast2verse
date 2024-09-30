@@ -11,9 +11,9 @@
         <a href="index.htm"><img src="img/tLogo.png" class="navLogo"></a>
         <a href="index.htm"><p class="navTxt">Home</p></a>
         <a class="navTxt" href="explore.htm">Explore</a>
-        <p class="navTxt">Create</p>
-        <p class="navTxt">Kitchen Tips</p>
-        <p class="navTxt">Contact Us</p>
+        <p class="navTxt" style="color: #835d2b;">Create</p>
+        <p class="navTxt" style="color: #835d2b;">Kitchen Tips</p>
+        <a class="navTxt" href="aboutus.htm">About Us</a>
         <input type="text" placeholder="What recipe are you after?">
         <a href="#"><img src="img/search.png" style="width: 18px; margin-left: -34px;"></a>
     </div>
@@ -22,151 +22,171 @@
         <div class="filters">
             <h2>Explore Recipes</h2>
             <div class="buttons">
-                <p onclick="selectCategory(this)" class="selected">All</p>
-                <p onclick="selectCategory(this)">Breakfast</p>
-                <p onclick="selectCategory(this)">Lunch</p>
-                <p onclick="selectCategory(this)">Dinner</p>
-                <p onclick="selectCategory(this)">Dessert</p>
-                <p onclick="selectCategory(this)">Drinks</p>
+                <p onclick="selectCategory(this)" id="all" data-category="all">All</p>
+                <p onclick="selectCategory(this)" data-category="breakfast">Breakfast</p>
+                <p onclick="selectCategory(this)" id="lunch" data-category="lunch">Lunch</p>
+                <p onclick="selectCategory(this)" id="dinner" data-category="dinner">Dinner</p>
+                <p onclick="selectCategory(this)" id="dessert" data-category="dessert">Dessert</p>
+                <p onclick="selectCategory(this)" id="drinks" data-category="drinks">Drinks</p>
             </div>
         </div>
+
         <div class="main">
-            <div class="tile">
-                <div style="height: 70%;">
-                    <img src="img/Burger.jpg" class="tImg">
-                </div>
-                <div class="text">
-                    <p style="margin-bottom: 9px;">BBQ Pulled Pork Burger</p>
-                    <div style="width: 100%; display: flex; justify-content: center;">
-                        <img src="img/stars/3star.png" style="height: 23px; margin-right: 17px;">
-                        <p>134</p>
+            <!-- Recipe Tiles with Categories -->
+            <a href="recipe.htm?id=0" data-category="lunch" class="fil">
+                <div class="tile">
+                    <div style="height: 70%;">
+                        <img src="img/Burger.jpg" class="tImg">
+                    </div>
+                    <div class="text">
+                        <p style="margin-bottom: 9px;">BBQ Pulled Pork Burger</p>
+                        <div style="width: 100%; display: flex; justify-content: center;">
+                            <img src="img/stars/3star.png" style="height: 23px; margin-right: 17px;">
+                            <p>134</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="tile">
-                <div style="height: 70%;">
-                    <img src="img/Pizza.jpg" class="tImg">
-                </div>
-                <div class="text">
-                    <p style="margin-bottom: 9px;">Worlds Best Pizza</p>
-                    <div style="width: 100%; display: flex; justify-content: center;">
-                        <img src="img/stars/1star.png" style="height: 23px; margin-right: 17px;">
-                        <p>134</p>
+            </a>
+            <a href="recipe.htm?id=1" data-category="dinner" class="fil">
+                <div class="tile">
+                    <div style="height: 70%;">
+                        <img src="img/Pizza.jpg" class="tImg">
+                    </div>
+                    <div class="text">
+                        <p style="margin-bottom: 9px;">Worlds Best Pizza</p>
+                        <div style="width: 100%; display: flex; justify-content: center;">
+                            <img src="img/stars/1star.png" style="height: 23px; margin-right: 17px;">
+                            <p>134</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="tile">
-                <div style="height: 70%;">
-                    <img src="img/Turkey.jpg" class="tImg">
-                </div>
-                <div class="text">
-                    <p style="margin-bottom: 9px;">Roast Turkey</p>
-                    <div style="width: 100%; display: flex; justify-content: center;">
-                        <img src="img/stars/2star.png" style="height: 23px; margin-right: 17px;">
-                        <p>134</p>
+            </a>
+            <a href="recipe.htm?id=2" data-category="dinner" class="fil">
+                <div class="tile">
+                    <div style="height: 70%;">
+                        <img src="img/Turkey.jpg" class="tImg">
+                    </div>
+                    <div class="text">
+                        <p style="margin-bottom: 9px;">Roast Turkey</p>
+                        <div style="width: 100%; display: flex; justify-content: center;">
+                            <img src="img/stars/2star.png" style="height: 23px; margin-right: 17px;">
+                            <p>134</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="tile">
-                <div style="height: 70%;">
-                    <img src="img/Pesto.jpg" class="tImg">
-                </div>
-                <div class="text">
-                    <p style="margin-bottom: 9px;">Authentic Pesto</p>
-                    <div style="width: 100%; display: flex; justify-content: center;">
-                        <img src="img/stars/5star.png" style="height: 23px; margin-right: 17px;">
-                        <p>134</p>
+            </a>
+            <a href="recipe.htm?id=3" data-category="lunch" class="fil">
+                <div class="tile">
+                    <div style="height: 70%;">
+                        <img src="img/Pesto.jpg" class="tImg">
+                    </div>
+                    <div class="text">
+                        <p style="margin-bottom: 9px;">Authentic Pesto</p>
+                        <div style="width: 100%; display: flex; justify-content: center;">
+                            <img src="img/stars/5star.png" style="height: 23px; margin-right: 17px;">
+                            <p>134</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="tile">
-                <div style="height: 70%;">
-                    <img src="img/popcorn.jpg" class="tImg">
-                </div>
-                <div class="text">
-                    <p style="margin-bottom: 9px;">Korean Fried Chicken</p>
-                    <div style="width: 100%; display: flex; justify-content: center;">
-                        <img src="img/stars/1star.png" style="height: 23px; margin-right: 17px;">
-                        <p>134</p>
+            </a>
+            <a href="recipe.htm?id=4" data-category="lunch" class="fil">
+                <div class="tile">
+                    <div style="height: 70%;">
+                        <img src="img/popcorn.jpg" class="tImg">
+                    </div>
+                    <div class="text">
+                        <p style="margin-bottom: 9px;">Korean Fried Chicken</p>
+                        <div style="width: 100%; display: flex; justify-content: center;">
+                            <img src="img/stars/1star.png" style="height: 23px; margin-right: 17px;">
+                            <p>134</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="tile">
-                <div style="height: 70%;">
-                    <img src="img/Churro.jpg" class="tImg">
-                </div>
-                <div class="text">
-                    <p style="margin-bottom: 9px;">Churros With Dip</p>
-                    <div style="width: 100%; display: flex; justify-content: center;">
-                        <img src="img/stars/4star.png" style="height: 23px; margin-right: 17px;">
-                        <p>134</p>
+            </a>
+            <a href="recipe.htm?id=5" data-category="dessert" class="fil">
+                <div class="tile">
+                    <div style="height: 70%;">
+                        <img src="img/Churro.jpg" class="tImg">
+                    </div>
+                    <div class="text">
+                        <p style="margin-bottom: 9px;">Churros With Dip</p>
+                        <div style="width: 100%; display: flex; justify-content: center;">
+                            <img src="img/stars/4star.png" style="height: 23px; margin-right: 17px;">
+                            <p>134</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="tile">
-                <div style="height: 70%;">
-                    <img src="img/steak.jpg" class="tImg">
-                </div>
-                <div class="text">
-                    <p style="margin-bottom: 9px;">Texas BBQ Ribs</p>
-                    <div style="width: 100%; display: flex; justify-content: center;">
-                        <img src="img/stars/4star.png" style="height: 23px; margin-right: 17px;">
-                        <p>134</p>
+            </a>
+            <a href="recipe.htm?id=6" data-category="dinner" class="fil">
+                <div class="tile">
+                    <div style="height: 70%;">
+                        <img src="img/steak.jpg" class="tImg">
+                    </div>
+                    <div class="text">
+                        <p style="margin-bottom: 9px;">Texas BBQ Ribs</p>
+                        <div style="width: 100%; display: flex; justify-content: center;">
+                            <img src="img/stars/4star.png" style="height: 23px; margin-right: 17px;">
+                            <p>134</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="tile">
-                <div style="height: 70%;">
-                    <img src="img/Burger.jpg" class="tImg">
-                </div>
-                <div class="text">
-                    <p style="margin-bottom: 9px;">Spaghetti Bolognese</p>
-                    <div style="width: 100%; display: flex; justify-content: center;">
-                        <img src="img/stars/2star.png" style="height: 23px; margin-right: 17px;">
-                        <p>134</p>
+            </a>
+            <a href="recipe.htm?id=7" data-category="dinner" class="fil">
+                <div class="tile">
+                    <div style="height: 70%;">
+                        <img src="img/Burger.jpg" class="tImg">
+                    </div>
+                    <div class="text">
+                        <p style="margin-bottom: 9px;">Spaghetti Bolognese</p>
+                        <div style="width: 100%; display: flex; justify-content: center;">
+                            <img src="img/stars/2star.png" style="height: 23px; margin-right: 17px;">
+                            <p>134</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="tile">
-                <div style="height: 70%;">
-                    <img src="img/Stew.jpg" class="tImg">
-                </div>
-                <div class="text">
-                    <p style="margin-bottom: 9px;">Slow Cooked Beef Stew</p>
-                    <div style="width: 100%; display: flex; justify-content: center;">
-                        <img src="img/stars/3star.png" style="height: 23px; margin-right: 17px;">
-                        <p>134</p>
+            </a>
+            <a href="recipe.htm?id=8" data-category="dinner" class="fil">
+                <div class="tile">
+                    <div style="height: 70%;">
+                        <img src="img/Stew.jpg" class="tImg">
+                    </div>
+                    <div class="text">
+                        <p style="margin-bottom: 9px;">Slow Cooked Beef Stew</p>
+                        <div style="width: 100%; display: flex; justify-content: center;">
+                            <img src="img/stars/3star.png" style="height: 23px; margin-right: 17px;">
+                            <p>134</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="tile">
-                <div style="height: 70%;">
-                    <img src="img/drink.jpg" class="tImg">
-                </div>
-                <div class="text">
-                    <p style="margin-bottom: 9px;">Iced Bubble tea</p>
-                    <div style="width: 100%; display: flex; justify-content: center;">
-                        <img src="img/stars/5star.png" style="height: 23px; margin-right: 17px;">
-                        <p>134</p>
+            </a>
+            <a href="recipe.htm?id=9" data-category="drinks" class="fil">
+                <div class="tile">
+                    <div style="height: 70%;">
+                        <img src="img/drink.jpg" class="tImg">
+                    </div>
+                    <div class="text">
+                        <p style="margin-bottom: 9px;">Iced Bubble tea</p>
+                        <div style="width: 100%; display: flex; justify-content: center;">
+                            <img src="img/stars/5star.png" style="height: 23px; margin-right: 17px;">
+                            <p>134</p>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </a>
         </div>
     </div>
-
     <footer>
         <p>© 2024 Tastiverse. All rights reserved.</p>
         <div class="icons">
             <img src="img/icons/txt.png">
             <div class="iLinks">
-                <a href="#"><img src="img/icons/t.png"></a>
-                <a href="#"><img src="img/icons/f.png"></a>
-                <a href="#"><img src="img/icons/p.png"></a>
-                <a href="#"><img src="img/icons/cam.png"></a>
+                <a href="https://twitter.com"><img src="img/icons/t.png"></a>
+                <a href="https://facebook.com"><img src="img/icons/f.png"></a>
+                <a href="https://nz.pinterest.com/search/pins/?q=juicy%20dinner&rs=typed"><img src="img/icons/p.png"></a>
+                <a href="https://instagram.com"><img src="img/icons/cam.png"></a>
             </div>
         </div>  
     </footer>
-
     <script src="explore.js"></script>
 </body>
 </html>
