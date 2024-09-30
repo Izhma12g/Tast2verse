@@ -1,46 +1,60 @@
 const mainContainer = document.querySelector('.main');
 const urlParams = new URLSearchParams(window.location.search);
+const query = urlParams.get('search');
 const recipeId = urlParams.get('id');
-console.log(recipeId);
+const bar = document.getElementById('bar');
 if (recipeId) {
-    selectCategory(document.getElementById(recipeId));
-} else {
+    selectCategory(document.getElementById(recipeId), true);
+} else if (query) {
+    selectCategory(document.getElementById('all'));
+    bar.value = query;
+    console.log(query);
+    search(query);
+}  else {
     selectCategory(document.getElementById('all'));
 }
 
 
 
-function selectCategory(element) {
-    const selectedCategory = element.getAttribute('data-category');
-    const recipes = document.querySelectorAll('.fil');
-    
-    let visibleCount = 0;
+function selectCategory(element, update) {
+    if (update){
+        bar.value = '';
+        const selectedCategory = element.getAttribute('data-category');
+        const recipes = document.querySelectorAll('.fil');
+        
+        let visibleCount = 0;
 
-    recipes.forEach(recipe => {
-        const recipeCategory = recipe.getAttribute('data-category');
-        if (selectedCategory === 'all' || recipeCategory === selectedCategory) {
-            recipe.style.display = 'flex';
-            visibleCount++;
-        } else {
-            recipe.style.display = 'none';
-        }
-    });
+        recipes.forEach(recipe => {
+            const recipeCategory = recipe.getAttribute('data-category');
+            if (selectedCategory === 'all' || recipeCategory === selectedCategory) {
+                recipe.style.display = 'flex';
+                visibleCount++;
+            } else {
+                recipe.style.display = 'none';
+            }
+        });
+    }
 
     // Update the selected filter styling
     const filters = document.querySelectorAll('.filters p');
     filters.forEach(filter => filter.classList.remove('selected'));
     element.classList.add('selected');
-    updateTiles(visibleCount);
 }
 
-document.querySelector('input[type="text"]').addEventListener('input', function() {
+bar.addEventListener('input', function() {
     const searchQuery = this.value.toLowerCase(); // Get search input
+    search(searchQuery);
+});
+
+function search(sQuery) { 
+    selectCategory (document.getElementById('all'));
+    console.log(sQuery);
     const tiles = document.querySelectorAll('.tile'); // Get all recipe tiles
     let visibleCount = 0;
     // Loop through each tile and check if it matches the search query
     tiles.forEach(tile => {
         const recipeName = tile.querySelector('p').textContent.toLowerCase(); // Get the recipe name text
-        if (recipeName.includes(searchQuery)) {
+        if (recipeName.includes(sQuery)) {
             tile.parentElement.style.display = 'block'; // Show tile if it matches
             visibleCount++;
         } else {
@@ -48,11 +62,12 @@ document.querySelector('input[type="text"]').addEventListener('input', function(
         }
     });
     updateTiles(visibleCount);
-});
+}
 
 function updateTiles(visibleCount) {
+    console.log(visibleCount);
     if (visibleCount <= 4) {
-        mainContainer.style.justifyContent = 'flex-start'; // Left align if 3 or fewer items
+        mainContainer.style.justifyContent = 'flex-start'; // Left align if 4 or fewer items
         mainContainer.style.marginBottom = '28.24vh';
     } else if (visibleCount <= 5) {
         mainContainer.style.marginBottom = '28.24vh';

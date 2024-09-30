@@ -14,20 +14,20 @@
         <p class="navTxt" style="color: #835d2b;">Create</p>
         <p class="navTxt" style="color: #835d2b;">Kitchen Tips</p>
         <a class="navTxt" href="aboutus.htm">About Us</a>
-        <input type="text" placeholder="What recipe are you after?">
-        <a href="#"><img src="img/search.png" style="width: 18px; margin-left: -34px;"></a>
+        <input type="text" id="bar" placeholder="What recipe are you after?">
+        <img onclick="search()" src="img/search.png" style="width: 18px; margin-left: -34px;" id="btn">
     </div>
 
     <div class="wrapper">
         <div class="filters">
             <h2>Explore Recipes</h2>
             <div class="buttons">
-                <p onclick="selectCategory(this)" id="all" data-category="all">All</p>
-                <p onclick="selectCategory(this)" data-category="breakfast">Breakfast</p>
-                <p onclick="selectCategory(this)" id="lunch" data-category="lunch">Lunch</p>
-                <p onclick="selectCategory(this)" id="dinner" data-category="dinner">Dinner</p>
-                <p onclick="selectCategory(this)" id="dessert" data-category="dessert">Dessert</p>
-                <p onclick="selectCategory(this)" id="drinks" data-category="drinks">Drinks</p>
+                <p onclick="selectCategory(this, true)" id="all" data-category="all">All</p>
+                <p onclick="selectCategory(this, true)" data-category="breakfast">Breakfast</p>
+                <p onclick="selectCategory(this, true)" id="lunch" data-category="lunch">Lunch</p>
+                <p onclick="selectCategory(this, true)" id="dinner" data-category="dinner">Dinner</p>
+                <p onclick="selectCategory(this, true)" id="dessert" data-category="dessert">Dessert</p>
+                <p onclick="selectCategory(this, true)" id="drinks" data-category="drinks">Drinks</p>
             </div>
         </div>
 
