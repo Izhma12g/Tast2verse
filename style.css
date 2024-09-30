@@ -58,9 +58,7 @@ input {
     width: 60vw;  /* 1158px / 1920px * 100 */
 	height: 32.89vh;
     background: #E6D9AB;
-    border-color: #000000;
-    border-width: 0.1vw;
-    border-style: solid;
+    border: #000000 solid 0.1vw;
     border-radius: 1.3vw;
     display: flex;
 }
@@ -175,10 +173,6 @@ input {
     font-family: "Open Sans";
     font-weight: 400;
     font-size: 1.35vw;
-}
-
-.title {
-    font-size: 1.5vw;
 }
 
 .latestAll {
