@@ -1,155 +1,134 @@
 * {
     margin: 0;
     padding: 0;
-}
-
-body {
+    }
+    body {
     font-family: "Helvetica";
     font-weight: bold;
     background-color: #F5E6CC;
     width: 100%;
-}
-
-/* ==================================== NAVBAR ==================================== */
-.navbar {
+    }
+    .navbar {
     display: flex;
     align-items: center;
     width: 100%;
-    height: 10vh; /* 10vh remains unchanged */
+    height: 10vh;
     background: #333333;
-    margin-bottom: 5.3vh; /* 5.3vh remains unchanged */
-}
-
-.navTxt {
+    margin-bottom: 5.3vh;
+    }
+    .navTxt {
     color: #ECAB55;
-    font-size: 1.5vw; /* 1.5vw remains unchanged */
+    font-size: 1.5vw;
     text-align: left;
-    margin-right: 2.13vw; /* 2.13vw remains unchanged */
-}
-
-.navLogo {
-    margin-left: 1.15vw; /* 1.15vw remains unchanged */
-    margin-right: 2vw; /* 2vw remains unchanged */
-    width: 11vw; /* 11vw remains unchanged */
+    margin-right: 2.13vw;
+    }
+    .navLogo {
+    margin-left: 1.15vw;
+    margin-right: 2vw;
+    width: 11vw;
     display: block;
-}
-
-input {
-    padding-left: 1vw; /* 1vw remains unchanged */
-    margin-left: 0.676vw; /* Converted from 13px (approx. 0.676vw) */
-    width: 27.56vw; /* 27.56vw remains unchanged */
-    height: 5vh; /* 5vh remains unchanged */
+    }
+    input {
+    padding-left: 1vw;
+    margin-left: 13vw;
+    width: 27.56vw;
+    height: 5vh;
     background: #FFFFFF;
-    color: #7A7A7A;
+    color: black;
     border-color: #232323;
-    border-width: 0.1vw; /* 0.1vw remains unchanged */
+    border-width: 0.1vw;
     border-style: solid;
-    border-radius: 2vw; /* 2vw remains unchanged */
+    border-radius: 2vw;
     font-weight: 400;
-    font-size: 1.17vw; /* 1.17vw remains unchanged */
+    font-size: 1.17vw;
     text-align: left;
-}
-
-/* ==================================== MAIN ==================================== */
-.wrapper {
-    margin: 0 5.5vw; /* 5.5vw remains unchanged */
-}
-
-.filters {
-    border: #606060 0.2vw solid; /* 0.2vw remains unchanged */
-    border-radius: 0 1.5vw 0 1.5vw; /* 16px to approx. 1.5vw */
+    }
+    .wrapper {
+    margin: 0 5.5vw;
+    }
+    .filters {
+    border: #606060 0.2vw solid;
+    border-radius: 0 1.5vw 0 1.5vw;
     align-items: center;
-    height: 8.89vh; /* Converted from 96px (approx. 8.89vh) */
+    height: 8.89vh;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     background: #333333;
-    margin-bottom: 2.41vh; /* Converted from 26px (approx. 2.41vh) */
-}
-
-.filters h2 {
-    margin-left: 1.04vw; /* Converted from 20px (approx. 1.04vw) */
+    margin-bottom: 2.41vh;
+    }
+    .filters h2 {
+    margin-left: 1.04vw;
     font-weight: normal;
     color: #ECAB55;
-    font-size: 3.229vw; /* Corrected from 5.63vw based on 62px */
-    margin-right: 1.5vw; /* 1.5vw remains unchanged */
-}
-
-.filters p {
+    font-size: 3.229vw;
+    margin-right: 1.5vw;
+    }
+    .filters p {
     cursor: pointer;
-    line-height: 8.89vh; /* Converted from 96px (approx. 8.89vh) */
-    padding: 0 0.78vw; /* Converted from 15px (approx. 0.78vw) */
-    height: 100%; /* 100% remains unchanged */
-    border-left: #606060 0.2vw solid; /* 0.2vw remains unchanged */
+    line-height: 8.89vh;
+    padding: 0 0.78vw;
+    height: 100%;
+    border-left: #606060 0.2vw solid;
     font-weight: normal;
     color: #ECAB55;
-    font-size: 1.5vw; /* 1.5vw remains unchanged */
+    font-size: 1.5vw;
     text-align: left;
-}
-
-.buttons {
-    height: 100%; /* 100% remains unchanged */
+    }
+    .buttons {
+    height: 100%;
     display: flex;
     align-items: center;
-}
-
-.selected {
+    }
+    .selected {
     background: #444444;
     color: #F5E6CC !important;
-}
-
-.main {
+    }
+    .main {
     display: flex;
-    padding: 1.85vh; /* Converted from 20px (approx. 1.85vh) */
+    padding: 1.85vh;
     background: #B8A283;
-    border-radius: 0.52vw; /* Converted from 10px (approx. 0.52vw) */
-    border: #000000 0.2vw solid; /* 0.2vw remains unchanged */
+    border-radius: 0.52vw;
+    border: #000000 0.2vw solid;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 1.04vw; /* Converted from 20px (approx. 1.04vw) */
-    margin-bottom: 3.24vh; /* Converted from 35px (approx. 3.24vh) */
-}
-
-.tile {
+    gap: 1.04vw;
+    margin-bottom: 3.24vh;
+    }
+    .tile {
     overflow: hidden;
     background: #E6D9AB;
-    width: 15.79vw; /* Converted from 303px (approx. 15.79vw) */
-    height: 30.19vh; /* Converted from 325px (approx. 30.19vh) */
+    width: 15.79vw;
+    height: 30.19vh;
     display: flex;
-    border-radius: 0.52vw; /* Converted from 10px (approx. 0.52vw) */
+    border-radius: 0.52vw;
     flex-direction: column;
     align-items: center;
-    font-size: 1.15vw; /* Converted from 22px (approx. 1.15vw) */
-    border: #000000 0.2vw solid; /* Converted from 3px (approx. 0.15vw) */
-}
-
-.tImg {
+    font-size: 1.15vw;
+    border: #000000 0.2vw solid;
+    }
+    .tImg {
     object-fit: contain;
-    height: 100%; /* 100% remains unchanged */
-    border-radius: 0.52vw 0.52vw 0 0; /* Converted from 10px (approx. 0.52vw) */
-}
-
-.text {
+    height: 100%;
+    border-radius: 0.52vw 0.52vw 0 0;
+    }
+    .text {
     color: black;
-    height: 100%; /* 100% remains unchanged */
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-
-/* ==================================== FOOTER ==================================== */
-a {
+    }
+    a {
     text-decoration: none;
-}
-
-footer {
+    }
+    footer {
     background-color: #e6d9abd2;
     height: 10vh;
-    position: relative; 
+    position: relative;
     padding: 0 2.25vw;
-}
-
-footer p {
+    }
+    footer p {
     position: absolute;
     left: 2.25vw;
     top: 50%;
@@ -157,9 +136,8 @@ footer p {
     font-weight: 400;
     color: #4F4F4F;
     margin: 0;
-}
-
-.icons {
+    }
+    .icons {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -167,16 +145,14 @@ footer p {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.iLinks {
+    }
+    .iLinks {
     margin-top: 0.9vh;
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-}
-
-.icons img {
+    }
+    .icons img {
     height: 20px;
-}
+    }

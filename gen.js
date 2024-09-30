@@ -223,7 +223,7 @@ function generateRecipePage(recipe) {
         <p class="navTxt" style="color: #835d2b;">Kitchen Tips</p>
         <a class="navTxt" href="aboutus.htm">About Us</a>
         <input type="text" placeholder="What recipe are you after?">
-        <a href="#"><img src="img/search.png" style="width: 18px; margin-left: -34px;"></a>
+         <img onclick="search()" src="img/search.png" style="width: 18px; margin-left: -34px;" id="btn">
     </div>
     <div class="wrapper">
         <div class="left">
