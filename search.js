@@ -1,7 +1,7 @@
 const input = document.querySelector('input[type="text"]')
 let query;
 
-input.addEventListener("keypress", function(event) {
+input.addEventListener("keyup", function(event) {
     query = this.value.toLowerCase();
     if (event.key === "Enter") {
       document.getElementById("btn").click();

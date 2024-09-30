@@ -8,7 +8,6 @@ if (recipeId) {
 } else if (query) {
     selectCategory(document.getElementById('all'));
     bar.value = query;
-    console.log(query);
     search(query);
 }  else {
     selectCategory(document.getElementById('all'));
@@ -48,7 +47,6 @@ bar.addEventListener('input', function() {
 
 function search(sQuery) { 
     selectCategory (document.getElementById('all'));
-    console.log(sQuery);
     const tiles = document.querySelectorAll('.tile'); // Get all recipe tiles
     let visibleCount = 0;
     // Loop through each tile and check if it matches the search query
@@ -65,7 +63,6 @@ function search(sQuery) {
 }
 
 function updateTiles(visibleCount) {
-    console.log(visibleCount);
     if (visibleCount <= 4) {
         mainContainer.style.justifyContent = 'flex-start'; // Left align if 4 or fewer items
         mainContainer.style.marginBottom = '28.24vh';
