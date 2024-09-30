@@ -318,10 +318,10 @@ function generateRecipePage(recipe) {
         <div class="icons">
             <img src="img/icons/txt.png">
             <div class="iLinks">
-                <a href="#"><img src="img/icons/t.png"></a>
-                <a href="#"><img src="img/icons/f.png"></a>
-                <a href="#"><img src="img/icons/p.png"></a>
-                <a href="#"><img src="img/icons/cam.png"></a>
+                <a href="https://twitter.com"><img src="img/icons/t.png"></a>
+                <a href="https://facebook.com"><img src="img/icons/f.png"></a>
+                <a href="https://nz.pinterest.com/search/pins/?q=juicy%20dinner&rs=typed"><img src="img/icons/p.png"></a>
+                <a href="https://instagram.com"><img src="img/icons/cam.png"></a>
             </div>
         </div>  
     </footer>
