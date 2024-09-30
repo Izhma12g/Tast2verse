@@ -82,6 +82,9 @@ input {
     height: fit-content;
     width: 647px;
 }
+ul {
+    max-width: 45%;;
+}
 .desc {
     color: #363636;
     font-family: "Open Sans";

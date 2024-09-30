@@ -76,15 +76,16 @@ const recipes = [
         title: "Authentic Pesto",
         image: "img/Pesto.jpg",
         ingredients: [
-            "2 cups fresh basil leaves",
-            "1/2 cup pine nuts",
-            "2 cloves garlic",
-            "1/2 cup grated Parmesan cheese",
-            "1/2 cup olive oil",
-            "Salt and pepper to taste",
-            "Pasta, for serving"
+            "100g fresh basil leaves",
+            "50g pine nuts",
+            "50g Parmesan cheese, grated",
+            "2 garlic cloves",
+            "120ml extra virgin olive oil",
+            "1 tablespoon lemon juice",
+            "Salt and black pepper",
+            "30g Pecorino Romano cheese, grated (optional)"
         ],
-        steps: `Begin by toasting the pine nuts in a dry pan over medium heat until they are golden and fragrant. In a food processor, combine the basil leaves, toasted pine nuts, garlic, and Parmesan. Pulse until finely chopped. <br><br>With the processor running, slowly drizzle in the olive oil until the pesto reaches your desired consistency. Season with salt and pepper to taste. <br><br>Toss the pesto with freshly cooked pasta, adding a little pasta water if needed to loosen the sauce. Garnish with extra Parmesan and enjoy the bright, fresh flavours of this classic Italian sauce! `
+        steps: `To make an authentic, vibrant pesto, the secret lies in fresh ingredients and the love you pour into each step. Begin by washing and gently patting dry your fresh basil leaves. This simple herb is the heart of your pesto, bringing the bright, aromatic flavour that sets it apart from anything store-bought. Next, lightly toast the pine nuts in a dry pan over medium heat for a few minutes, stirring frequently to ensure they don’t burn. Toasting enhances the nutty flavour and adds a rich dimension to your pesto, making every bite irresistible. <br><br>Now, let's get to the fun part – using a mortar and pestle, the traditional way to make pesto! Begin by crushing the garlic cloves with a pinch of salt until you form a smooth paste. The salt not only helps break down the garlic but also balances the intense flavours later on. Add in the basil leaves a handful at a time, grinding them against the sides of the mortar in a circular motion. This slow, methodical grinding releases the essential oils in the basil, intensifying the aroma and flavour. As the basil breaks down, you’ll notice the beautiful green paste forming. Take your time – this process is all about patience and love for the ingredients. <br><br>Once your basil and garlic mixture is a fragrant, green paste, add the toasted pine nuts. Crush them gently into the mixture, giving the pesto a slightly chunky texture. If you're feeling adventurous, you can add some grated Pecorino Romano at this stage for extra sharpness, but Parmesan will do just fine on its own. Now, gradually incorporate the grated Parmesan cheese, continuing to grind and mix until everything is well combined. Parmesan adds that distinctive salty, umami flavour that takes the pesto to another level. <br><br>It’s time to add the olive oil, and here’s where your pesto really starts to come together. Slowly drizzle the extra virgin olive oil into the mortar while stirring constantly. You want the oil to emulsify with the other ingredients, creating a smooth, luxurious pesto. Be sure to use high-quality extra virgin olive oil for its rich, fruity flavour – this is a key component of authentic pesto. Add lemon juice to brighten the flavour, balancing the richness of the cheese and pine nuts. <br><br>Taste your pesto and season it with salt and freshly ground black pepper to your liking. If you prefer a thinner pesto, feel free to add a little more olive oil until you reach your desired consistency. Some people like their pesto thicker, perfect for spreading on bread, while others prefer it a bit more liquid for tossing with pasta. Either way, your pesto is bursting with fresh, vibrant flavours. <br><br>If you don’t have a mortar and pestle, you can make pesto in a food processor. Just be sure to pulse the ingredients rather than blend them at high speed – the heat from over-processing can cause the basil to oxidise and turn bitter. <br><br>Your authentic pesto is now ready! Toss it with freshly cooked pasta, spread it on sandwiches, or even drizzle it over grilled vegetables or meats. Its versatility and fresh, herby taste will elevate any dish. If you have leftovers, store them in an airtight container with a thin layer of olive oil on top to prevent browning. Buon appetito! `
     },
     
     // Korean Fried Chicken
@@ -92,21 +93,26 @@ const recipes = [
         title: "Korean Fried Chicken",
         image: "img/popcorn.jpg",
         ingredients: [
-            "1kg chicken wings",
-            "1/2 cup cornstarch",
-            "1/2 cup flour",
+            "1kg chicken wings or drumettes",
+            "120g cornflour",
+            "1 teaspoon baking powder",
             "1 teaspoon salt",
             "1/2 teaspoon black pepper",
-            "Oil for frying",
-            "1/2 cup gochujang (Korean chili paste)",
+            "1/2 teaspoon garlic powder",
+            "Vegetable oil for frying",
             "2 tablespoons soy sauce",
-            "2 tablespoons honey",
-            "1 tablespoon rice vinegar",
-            "Sesame seeds, for garnish",
-            "Green onions, for garnish"
+            "2 tablespoons gochujang (Korean chilli paste)",
+            "2 tablespoons rice vinegar",
+            "3 tablespoons honey",
+            "1 tablespoon sesame oil",
+            "2 garlic cloves, minced",
+            "1 tablespoon ginger, minced",
+            "1 tablespoon sesame seeds",
+            "Spring onions for garnish"
         ],
-        steps: `Start by patting the chicken wings dry with a paper towel. In a large bowl, combine cornstarch, flour, salt, and pepper. Coat the chicken wings in the flour mixture, ensuring they are evenly covered. <br><br>Heat oil in a deep pan or fryer to 180°C (350°F). Fry the wings in batches until crispy and golden, about 8-10 minutes per batch. Drain on paper towels. <br><br>While the chicken is frying, make the sauce by combining gochujang, soy sauce, honey, and rice vinegar in a small saucepan. Heat until the sauce thickens slightly. <br><br>Toss the crispy chicken wings in the spicy sauce and garnish with sesame seeds and sliced green onions. Serve immediately for the perfect combination of crispy, spicy, and sweet! `
-    },
+        steps: `To make crispy, flavour-packed Korean Fried Chicken, the secret lies in achieving the perfect crunch while coating the chicken in a sticky, spicy sauce that will keep you coming back for more. Begin by prepping your chicken wings or drumettes. Pat them dry with paper towels to remove any excess moisture – this step is crucial for getting a crispy exterior when frying. Season the chicken with salt, pepper, and garlic powder, ensuring every piece is well coated. <br><br>In a large bowl, mix the cornflour and baking powder. The baking powder is key here as it helps to make the coating light and extra crispy. Toss the chicken in this dry mixture until evenly coated. Let the chicken sit in the cornflour mixture for about 10-15 minutes, allowing the coating to adhere to the surface. This ensures that each bite will be crunchy and satisfying. <br><br>Now, it’s time to fry! Heat vegetable oil in a deep pan or fryer to about 180°C (350°F). Carefully lower the chicken pieces into the hot oil, working in batches to avoid overcrowding the pan. Fry the chicken for 6-8 minutes until it is golden and crispy. For the ultimate crunch, double fry the chicken: after the first fry, remove the chicken and let it rest for a few minutes. Then return it to the hot oil for a second fry, which will give it that signature Korean fried chicken crispiness. <br><br>While the chicken is frying, let’s prepare the star of the dish – the sweet and spicy sauce. In a small saucepan, heat the sesame oil over medium heat. Add the minced garlic and ginger, sautéing until fragrant, about 1-2 minutes. Next, stir in the gochujang, soy sauce, rice vinegar, and honey. Simmer this mixture for a few minutes, letting the flavours meld together and the sauce thicken slightly. The combination of the spicy gochujang, salty soy sauce, and sweet honey creates the perfect balance of flavours that defines Korean fried chicken. <br><br>Once the chicken has finished its second fry, immediately toss the hot, crispy chicken in the sauce, ensuring each piece is generously coated. The sauce will cling to the chicken’s crispy exterior without making it soggy, thanks to the double frying technique. Garnish with toasted sesame seeds and freshly sliced spring onions for an extra pop of flavour and crunch. <br><br>Your Korean Fried Chicken is now ready to serve! The perfect combination of crunch and sticky, spicy sauce will have everyone reaching for more. Serve it with a side of pickled radish or kimchi to cut through the richness, and don’t forget a cold drink to cool off the heat. Whether enjoyed as a snack, appetiser, or main course, this Korean Fried Chicken will quickly become a favourite! Enjoy! `
+    }
+    ,
     
     // Churros with Dip
     {
