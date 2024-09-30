@@ -43,6 +43,9 @@
     font-size: 1.17vw;
     text-align: left;
     }
+    .text p {
+        text-align: center;
+    }
     .wrapper {
     margin: 0 5.5vw;
     }
