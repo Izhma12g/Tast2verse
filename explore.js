@@ -32,6 +32,7 @@ function selectCategory(element, update) {
                 recipe.style.display = 'none';
             }
         });
+        updateTiles(visibleCount);
     }
 
     // Update the selected filter styling
