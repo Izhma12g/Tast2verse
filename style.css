@@ -55,7 +55,7 @@ input {
 
 /* ==================================== MAIN ==================================== */
 .trending {
-    width: 60vw;  /* 1158px / 1920px * 100 */
+    width: 60vw;
 	height: 32.89vh;
     background: #E6D9AB;
     border: #000000 solid 0.1vw;
@@ -72,7 +72,7 @@ input {
 }
 
 .trendingImg {
-    width: 55%;
+    /* width: 55%; */
     object-fit: cover;
     height: 100%;
     border-radius: 1.21vw 0 0 1.21vw;

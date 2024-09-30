@@ -26,12 +26,13 @@ function selectCategory(element, update) {
         recipes.forEach(recipe => {
             const recipeCategory = recipe.getAttribute('data-category');
             if (selectedCategory === 'all' || recipeCategory === selectedCategory) {
-                recipe.style.display = 'flex';
+                recipe.style.display = 'block';
                 visibleCount++;
             } else {
                 recipe.style.display = 'none';
             }
         });
+        updateTiles(visibleCount);
     }
 
     // Update the selected filter styling
