@@ -10,7 +10,7 @@ if (recipeId) {
     bar.value = query;
     search(query);
 }  else {
-    selectCategory(document.getElementById('all'));
+    selectCategory(document.getElementById('all'), true);
 }
 
 
