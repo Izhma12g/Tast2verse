@@ -250,66 +250,74 @@ function generateRecipePage(recipe) {
         </div>
         <div class="right">
             <p style="margin: 0 6px 4px 10px">Latest Recipes</p>
-            <div class="latest">
-                <hr>
-                <div class="latestAll">
-                    <div class="latestTxt">
-                        <h3>Dinner Recipe</h3>
-                        <p class="name">Texas Style BBQ Ribs With Secret Sauce </p>
-                        <p class="time">2 Hours Cooking time</p>
-                        <div class="rating">
-                            <img src="img/stars/5star.png" style="width: 93px;">
-                            <h2>64</h2>
+            <a href="recipe.htm?id=6">
+                <div class="latest">
+                    <hr>
+                    <div class="latestAll">
+                        <div class="latestTxt">
+                            <h3>Dinner Recipe</h3>
+                            <p class="name">Texas Style BBQ Ribs With Secret Sauce </p>
+                            <p class="time">2 Hours Cooking time</p>
+                            <div class="rating">
+                                <img src="img/stars/5star.png" style="width: 93px;">
+                                <h2>64</h2>
+                            </div>
                         </div>
-                    </div>
-                    <img src="img/steak.jpg" style="width: 120px; height: 120px; object-fit: cover; margin-right: 10px;">
-                </div>  
-            </div> 
-            <div class="latest">
-                <hr>
-                <div class="latestAll">
-                    <div class="latestTxt">
-                        <h3>Drink Recipe</h3>
-                        <p class="name">15 Minute Homemade <br> Iced Bubble tea </p>
-                        <p class="time">30 Minutes Preperation</p>
-                        <div class="rating">
-                            <img src="img/stars/3star.png" style="width: 93px;">
-                            <h2>128</h2>
+                        <img src="img/steak.jpg" style="width: 120px; height: 120px; object-fit: cover; margin-right: 10px;">
+                    </div>  
+                </div> 
+            </a>
+            <a href="recipe.htm?id=9">
+                <div class="latest">
+                    <hr>
+                    <div class="latestAll">
+                        <div class="latestTxt">
+                            <h3>Drink Recipe</h3>
+                            <p class="name">15 Minute Homemade <br> Iced Bubble tea </p>
+                            <p class="time">30 Minutes Preperation</p>
+                            <div class="rating">
+                                <img src="img/stars/3star.png" style="width: 93px;">
+                                <h2>128</h2>
+                            </div>
                         </div>
-                    </div>
-                    <img src="img/drink.jpg" style="object-position: -56px; width: 120px; height: 120px; object-fit: cover; margin-right: 10px;">
-                </div>  
-            </div> 
-            <div class="latest">
-                <hr>
-                <div class="latestAll">
-                    <div class="latestTxt">
-                        <h3>Lunch Recipe</h3>
-                        <p class="name">Authentic Italian style Pesto Pasta Recipe</p>
-                        <p class="time">1.5 Hours Cooking time</p>
-                        <div class="rating">
-                            <img src="img/stars/4star.png" style="width: 93px;">
-                            <h2>64</h2>
+                        <img src="img/drink.jpg" style="object-position: -56px; width: 120px; height: 120px; object-fit: cover; margin-right: 10px;">
+                    </div>  
+                </div> 
+            </a>
+            <a href="recipe.htm?id=3">
+                <div class="latest">
+                    <hr>
+                    <div class="latestAll">
+                        <div class="latestTxt">
+                            <h3>Lunch Recipe</h3>
+                            <p class="name">Authentic Italian style Pesto Pasta Recipe</p>
+                            <p class="time">1.5 Hours Cooking time</p>
+                            <div class="rating">
+                                <img src="img/stars/4star.png" style="width: 93px;">
+                                <h2>64</h2>
+                            </div>
                         </div>
-                    </div>
-                    <img src="img/pesto.jpg" style="width: 120px; height: 120px; object-fit: cover; margin-right: 10px;">
-                </div>  
-            </div> 
-            <div class="latest">
-                <hr>
-                <div class="latestAll">
-                    <div class="latestTxt">
-                        <h3>Snack Recipe</h3>
-                        <p class="name">Sweet Korean Fried Chicken Popcorn</p>
-                        <p class="time">30 Minutes Cooking time</p>
-                        <div class="rating">
-                            <img src="img/stars/1star.png" style="width: 93px;">
-                            <h2>24</h2>
+                        <img src="img/pesto.jpg" style="width: 120px; height: 120px; object-fit: cover; margin-right: 10px;">
+                    </div>  
+                </div> 
+            </a>
+            <a href="recipe.htm?id=4">
+                <div class="latest">
+                    <hr>
+                    <div class="latestAll">
+                        <div class="latestTxt">
+                            <h3>Snack Recipe</h3>
+                            <p class="name">Sweet Korean Fried Chicken Popcorn</p>
+                            <p class="time">30 Minutes Cooking time</p>
+                            <div class="rating">
+                                <img src="img/stars/1star.png" style="width: 93px;">
+                                <h2>24</h2>
+                            </div>
                         </div>
-                    </div>
-                    <img src="img/popcorn.jpg" style="width: 120px; height: 120px; object-fit: cover; margin-right: 10px;">
-                </div>  
-            </div> 
+                        <img src="img/popcorn.jpg" style="width: 120px; height: 120px; object-fit: cover; margin-right: 10px;">
+                    </div>  
+                </div> 
+            </a>
             <hr>
         </div>
     </div>
