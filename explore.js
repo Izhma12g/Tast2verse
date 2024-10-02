@@ -23,8 +23,8 @@ async function loadRecipes() {
                     <div class="text">
                         <p style="margin-bottom: 9px;">${recipe.title}</p>
                         <div style="width: 100%; display: flex; justify-content: center;">
-                            <img src="img/stars/3star.png" style="height: 23px; margin-right: 17px;">
-                            <p>${Math.floor(Math.random() * 100)}</p>
+                            <img src="img/stars/${recipe.rating}star.png" style="height: 23px; margin-right: 17px;">
+                            <p>${recipe.rating_count}</p>
                         </div>
                     </div>
                 </div>

@@ -61,12 +61,50 @@ h1 {
 
 .box {
     padding: 1.211vw;
-    width: 64.6vw;
     background: #E6D9AB;
     border: #000000 0.2vw solid;
     border-radius: 1.3vw;
     display: flex;
+    flex-direction: row;
+    margin-bottom: 9vh;
+}
+#display {
+    width: 100%;
+    padding: 30px;
+}
+
+.tile {
+    margin-top: 4vh;
+    overflow: hidden;
+    background: #E6D9AB;
+    width: 15.79vw;
+    height: 30.19vh;
+    display: flex;
+    border-radius: 0.52vw;
     flex-direction: column;
+    align-items: center;
+    font-size: 1.15vw;
+    border: #000000 0.2vw solid;
+}
+.tImg {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+.text {
+    color: black;
+    height: 32%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+form {
+    width: 100%;
+}
+textarea {
+    width: 100%;
+    resize: none;
+    font-size: 0.85vw;
 }
 /* ==================================== FOOTER ==================================== */
 a {

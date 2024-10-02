@@ -22,7 +22,15 @@
             <div class="box">
                 <form id="recipeForm">
                     <label for="title">Recipe Title:</label>
-                    <input type="text" id="title" name="title" required><br><br>
+                    <input type="text" id="title" name="title" class="til" required>
+                    <label for="rating">Your Rating:</label>
+                    <select id="rating" name="rating" class="til" required>
+                        <option value="1">1 Star</option>
+                        <option value="2">2 Star</option>
+                        <option value="3">3 Star</option>
+                        <option value="4">4 Star</option>
+                        <option value="5" selected>5 Star</option>
+                    </select>
                     <label for="category">Category:</label>
                     <select id="category" name="category" required>
                         <option value="dinner">Dinner</option>
@@ -30,21 +38,26 @@
                         <option value="breakfast">Breakfast</option>
                         <option value="dessert">Dessert</option>
                         <option value="drinks">Drinks</option>
-                    </select>
+                    </select><br><br>
                     <label for="image">Image URL:</label>
-                    <input type="text" id="image" name="image" required><br><br>
+                    <input type="text" id="image" name="image" class="til" style="width: 100%;"><br><br>
             
                     <label for="ingredients">Ingredients (comma separated):</label><br>
-                    <textarea id="ingredients" name="ingredients" rows="4" cols="50" required></textarea><br><br>
+                    <textarea id="ingredients" name="ingredients" rows="4" cols="50" style="height: 5vh;"></textarea><br><br>
             
-                    <label for="steps">Preparation Steps:</label><br>
-                    <textarea id="steps" name="steps" rows="6" cols="50" required></textarea><br><br>
+                    <label for="steps">Recipe Step by Step Instructions:</label><br>
+                    <textarea id="steps" name="steps" rows="6" cols="50" style="height: 25vh;" required></textarea><br><br>
         
                     
             
                     <button type="submit">Submit</button>
+                    <p id="message"></p>
                 </form>
-                <div id="display" style="width: 100px; height: 100px;"></div>
+                <div id="display">
+                    <h2>Image tile thumbanil preview</h2>
+                    <p style="font-weight: 400;">If the image doesnt look centred, make sure you're using a 4:3 aspect ratio for best results</p>
+
+                </div>
             </div>
         
     
@@ -62,81 +75,7 @@
             </div>
         </div>  
     </footer>
-    <script>
-        function preview() {
-            recipes.forEach((recipe, index) => {
-                const tile = document.createElement('a');
-                tile.href = `recipe.html?id=${index}`;
-                tile.classList.add('fil');
-                tile.setAttribute('data-category', recipe.category);
-                tile.innerHTML = `
-                    <div class="tile">
-                        <div style="height: 68%; width: 100%;">
-                            <img src="${recipe.image}" class="tImg">
-                        </div>
-                        <div class="text">
-                            <p style="margin-bottom: 9px;">${recipe.title}</p>
-                            <div style="width: 100%; display: flex; justify-content: center;">
-                                <img src="img/stars/3star.png" style="height: 23px; margin-right: 17px;">
-                                <p>${Math.floor(Math.random() * 100)}</p>
-                            </div>
-                        </div>
-                    </div>
-                `;
-                mainContainer.appendChild(tile);
-            });
-        }   
-        const form = document.getElementById('recipeForm');
-        document.getElementById('image').addEventListener('input', function() {
-            const image = document.getElementById('image').value;
-
-            const img = new Image();
-            img.onload = function() {
-                // If the image loads successfully
-                document.getElementById('display').style.background = `url(${image}) no-repeat fixed center`;
-            };
-            img.onerror = function() {
-                // If there's an error (like 404 not found)
-                console.error('Error: Image not found or failed to load');
-                document.getElementById('display').style.backgroundImage = ''; // Remove background image
-            };
-
-            img.src = image; // Trigger the image load process
-        });
-        form.addEventListener('submit', async function(event) {
-            event.preventDefault();
-
-            const title = document.getElementById('title').value;
-            const ingredients = document.getElementById('ingredients').value.split(',');
-            const steps = document.getElementById('steps').value;
-            const category = document.getElementById('category').value; // Get the selected category
-
-            const recipe = {
-                title: title,
-                image: image,
-                ingredients: ingredients.map(ingredient => ingredient.trim()),
-                steps: steps,
-                category: category // Include category in the recipe object
-            };
-
-            try {
-                const response = await fetch('/saveRecipe', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(recipe)
-                });
-
-                const result = await response.json();
-
-                document.getElementById('message').innerText = result.message;
-            } catch (error) {
-                console.error('Error:', error);
-                document.getElementById('message').innerText = 'Error saving recipe.';
-            }   
-        });
-    </script>
+    <script src="create.js"></script>
     <script src="search.js"></script>
 </body>
 </html>
