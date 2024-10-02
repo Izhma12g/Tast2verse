@@ -110,6 +110,11 @@ input {
     font-size: 1.15vw;
     border: #000000 0.2vw solid;
 }
+.star {
+    width: 6.945vw;
+    object-fit: contain;
+    margin-right: 17px;
+}
 .tImg {
     object-fit: cover;
     height: 100%;

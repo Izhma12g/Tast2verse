@@ -53,7 +53,7 @@ input {
 
 .left {
     align-items: center;
-    padding-left: 4.219vw;
+    padding-left: 2.771vw;
     display: flex;
     flex-direction: column;
 }
@@ -138,7 +138,7 @@ h1 {
 
 .right {
     width: 21.421vw;
-    margin: 2.222vh auto 0 auto;
+    margin: 2.222vh 2.771vw 0 2.771vw;
 }
 
 .time {
@@ -147,7 +147,6 @@ h1 {
     font-family: "Helvetica";
     font-weight: 400;
     margin-top: 0.4vw;
-    margin-bottom: 0.4vw;
 }
 
 .name {
@@ -161,10 +160,11 @@ h1 {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: 20vh;
+    height: 19vh;
 }
 
 .latestTxt {
+    justify-content: space-evenly;
     margin-left: 0.8vw;
     display: flex;
     flex-direction: column;
@@ -173,12 +173,14 @@ h1 {
 }
 hr {
     color: #000000;
+    border: 0.1vh solid black;
 }
-
+.latest {
+    width: 23.438vw;
+}
 h3 {
     font-size: 1.35vw;
-    margin-top: 0.7vw;
-    margin-bottom: 0.4vw;
+    margin-top: 0.2vw;
 }
 
 .rating h2 {
@@ -189,6 +191,7 @@ h3 {
 }
 
 .rating {
+    margin-bottom: 0.2vw;
     display: flex;
     flex-direction: row;
 }
