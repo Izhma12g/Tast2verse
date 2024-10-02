@@ -214,5 +214,16 @@
     "steps": "Cook the tapioca pearls according to the package instructions. Drain and rinse under cold water. \n\nIn a glass, mix the chilled black tea, milk, and sugar until the sugar dissolves. Add the cooked tapioca pearls and stir. \n\nFill the glass with ice cubes and enjoy your refreshing iced bubble tea, perfect for a hot day! Feel free to customise with different flavours or fruit additions for a fun twist! ",
     "rating": 5,
     "rating_count": 68
+  },
+  {
+    "title": "Test recipe",
+    "image": "https://frommybowl.com/wp-content/uploads/2018/07/Watermelon_Slushie_Vegan_GlutenFree_4Ingredients_FromMyBowl-6.jpg",
+    "ingredients": [
+      "4 big guys"
+    ],
+    "steps": "test",
+    "category": "drinks",
+    "rating": "1",
+    "rating_count": 1
   }
 ]
