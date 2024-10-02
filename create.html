@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="create.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Tastiverse</title>
+</head>
+<body>
+    <div class="navbar" id="navbar">
+        <a href="index.html"><img src="img/tLogo.png" class="navLogo"></a>
+        <a href="index.html"><p class="navTxt">Home</p></a>
+        <a class="navTxt" href="explore.html">Explore</a>
+        <p class="navTxt">Create</p>
+        <p class="navTxt" style="color: #835d2b;">Kitchen Tips</p>
+        <a class="navTxt" href="aboutus.html">About Us</a>
+        <input type="text" placeholder="What recipe are you after?">
+        <img onclick="search()" src="img/search.png" style="width: 18px; margin-left: -34px;" id="btn">
+    </div>
+    <div class="wrapper">
+        <h1>Create New Recipe</h1>
+            <div class="box">
+                <form id="recipeForm">
+                    <label for="title">Recipe Title:</label>
+                    <input type="text" id="title" name="title" required><br><br>
+                    <label for="category">Category:</label>
+                    <select id="category" name="category" required>
+                        <option value="dinner">Dinner</option>
+                        <option value="lunch">Lunch</option>
+                        <option value="breakfast">Breakfast</option>
+                        <option value="dessert">Dessert</option>
+                        <option value="drinks">Drinks</option>
+                    </select>
+                    <label for="image">Image URL:</label>
+                    <input type="text" id="image" name="image" required><br><br>
+            
+                    <label for="ingredients">Ingredients (comma separated):</label><br>
+                    <textarea id="ingredients" name="ingredients" rows="4" cols="50" required></textarea><br><br>
+            
+                    <label for="steps">Preparation Steps:</label><br>
+                    <textarea id="steps" name="steps" rows="6" cols="50" required></textarea><br><br>
+        
+                    
+            
+                    <button type="submit">Submit</button>
+                </form>
+                <div id="display" style="width: 100px; height: 100px;"></div>
+            </div>
+        
+    
+        <div id="message"></div>
+    </div>
+    <footer>
+        <p>© 2024 Tastiverse. All rights reserved.</p>
+        <div class="icons">
+            <img src="img/icons/txt.png">
+            <div class="iLinks">
+                <a href="#"><img src="img/icons/t.png"></a>
+                <a href="#"><img src="img/icons/f.png"></a>
+                <a href="#"><img src="img/icons/p.png"></a>
+                <a href="#"><img src="img/icons/cam.png"></a>
+            </div>
+        </div>  
+    </footer>
+    <script>
+        function preview() {
+            recipes.forEach((recipe, index) => {
+                const tile = document.createElement('a');
+                tile.href = `recipe.html?id=${index}`;
+                tile.classList.add('fil');
+                tile.setAttribute('data-category', recipe.category);
+                tile.innerHTML = `
+                    <div class="tile">
+                        <div style="height: 68%; width: 100%;">
+                            <img src="${recipe.image}" class="tImg">
+                        </div>
+                        <div class="text">
+                            <p style="margin-bottom: 9px;">${recipe.title}</p>
+                            <div style="width: 100%; display: flex; justify-content: center;">
+                                <img src="img/stars/3star.png" style="height: 23px; margin-right: 17px;">
+                                <p>${Math.floor(Math.random() * 100)}</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                mainContainer.appendChild(tile);
+            });
+        }   
+        const form = document.getElementById('recipeForm');
+        document.getElementById('image').addEventListener('input', function() {
+            const image = document.getElementById('image').value;
+
+            const img = new Image();
+            img.onload = function() {
+                // If the image loads successfully
+                document.getElementById('display').style.background = `url(${image}) no-repeat fixed center`;
+            };
+            img.onerror = function() {
+                // If there's an error (like 404 not found)
+                console.error('Error: Image not found or failed to load');
+                document.getElementById('display').style.backgroundImage = ''; // Remove background image
+            };
+
+            img.src = image; // Trigger the image load process
+        });
+        form.addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            const title = document.getElementById('title').value;
+            const ingredients = document.getElementById('ingredients').value.split(',');
+            const steps = document.getElementById('steps').value;
+            const category = document.getElementById('category').value; // Get the selected category
+
+            const recipe = {
+                title: title,
+                image: image,
+                ingredients: ingredients.map(ingredient => ingredient.trim()),
+                steps: steps,
+                category: category // Include category in the recipe object
+            };
+
+            try {
+                const response = await fetch('/saveRecipe', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(recipe)
+                });
+
+                const result = await response.json();
+
+                document.getElementById('message').innerText = result.message;
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('message').innerText = 'Error saving recipe.';
+            }   
+        });
+    </script>
+    <script src="search.js"></script>
+</body>
+</html>
