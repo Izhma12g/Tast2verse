@@ -8,12 +8,12 @@
 </head>
 <body>
     <div class="navbar" id="navbar">
-        <a href="index.htm"><img src="img/tLogo.png" class="navLogo"></a>
-        <a href="index.htm"><p class="navTxt">Home</p></a>
-        <a class="navTxt" href="explore.htm">Explore</a>
+        <a href="index.html"><img src="img/tLogo.png" class="navLogo"></a>
+        <a href="index.html"><p class="navTxt">Home</p></a>
+        <a class="navTxt" href="explore.html">Explore</a>
         <p class="navTxt" style="color: #835d2b;">Create</p>
         <p class="navTxt" style="color: #835d2b;">Kitchen Tips</p>
-        <a class="navTxt" href="aboutus.htm">About Us</a>
+        <a class="navTxt" href="aboutus.html">About Us</a>
         <input type="text" id="bar" placeholder="What recipe are you after?">
         <img onclick="search()" src="img/search.png" style="width: 18px; margin-left: -34px;" id="btn">
     </div>
@@ -33,7 +33,7 @@
 
         <div class="main">
             <!-- Recipe Tiles with Categories -->
-            <a href="recipe.htm?id=0" data-category="lunch" class="fil">
+            <a href="recipe.html?id=0" data-category="lunch" class="fil">
                 <div class="tile">
                     <div style="height: 70%;">
                         <img src="img/Burger.jpg" class="tImg">
@@ -47,7 +47,7 @@
                     </div>
                 </div>
             </a>
-            <a href="recipe.htm?id=1" data-category="dinner" class="fil">
+            <a href="recipe.html?id=1" data-category="dinner" class="fil">
                 <div class="tile">
                     <div style="height: 70%;">
                         <img src="img/Pizza.jpg" class="tImg">
@@ -61,7 +61,7 @@
                     </div>
                 </div>
             </a>
-            <a href="recipe.htm?id=2" data-category="dinner" class="fil">
+            <a href="recipe.html?id=2" data-category="dinner" class="fil">
                 <div class="tile">
                     <div style="height: 70%;">
                         <img src="img/Turkey.jpg" class="tImg">
@@ -75,7 +75,7 @@
                     </div>
                 </div>
             </a>
-            <a href="recipe.htm?id=3" data-category="lunch" class="fil">
+            <a href="recipe.html?id=3" data-category="lunch" class="fil">
                 <div class="tile">
                     <div style="height: 70%;">
                         <img src="img/Pesto.jpg" class="tImg">
@@ -89,7 +89,7 @@
                     </div>
                 </div>
             </a>
-            <a href="recipe.htm?id=4" data-category="lunch" class="fil">
+            <a href="recipe.html?id=4" data-category="lunch" class="fil">
                 <div class="tile">
                     <div style="height: 70%;">
                         <img src="img/popcorn.jpg" class="tImg">
@@ -103,7 +103,7 @@
                     </div>
                 </div>
             </a>
-            <a href="recipe.htm?id=5" data-category="dessert" class="fil">
+            <a href="recipe.html?id=5" data-category="dessert" class="fil">
                 <div class="tile">
                     <div style="height: 70%;">
                         <img src="img/Churro.jpg" class="tImg">
@@ -117,7 +117,7 @@
                     </div>
                 </div>
             </a>
-            <a href="recipe.htm?id=6" data-category="dinner" class="fil">
+            <a href="recipe.html?id=6" data-category="dinner" class="fil">
                 <div class="tile">
                     <div style="height: 70%;">
                         <img src="img/steak.jpg" class="tImg">
@@ -131,7 +131,7 @@
                     </div>
                 </div>
             </a>
-            <a href="recipe.htm?id=7" data-category="breakfast" class="fil">
+            <a href="recipe.html?id=7" data-category="breakfast" class="fil">
                 <div class="tile">
                     <div style="height: 70%;">
                         <img src="img/pancake.jpg" class="tImg">
@@ -145,7 +145,7 @@
                     </div>
                 </div>
             </a>
-            <a href="recipe.htm?id=8" data-category="dinner" class="fil">
+            <a href="recipe.html?id=8" data-category="dinner" class="fil">
                 <div class="tile">
                     <div style="height: 70%;">
                         <img src="img/Stew.jpg" class="tImg">
@@ -159,7 +159,7 @@
                     </div>
                 </div>
             </a>
-            <a href="recipe.htm?id=9" data-category="drinks" class="fil">
+            <a href="recipe.html?id=9" data-category="drinks" class="fil">
                 <div class="tile">
                     <div style="height: 70%;">
                         <img src="img/drink.jpg" class="tImg">
@@ -187,6 +187,84 @@
             </div>
         </div>  
     </footer>
-    <script src="explore.js"></script>
+    <script>
+        const mainContainer = document.querySelector('.main');
+const urlParams = new URLSearchParams(window.location.search);
+const query = urlParams.get('search');
+const recipeId = urlParams.get('id');
+const bar = document.getElementById('bar');
+if (recipeId) {
+    selectCategory(document.getElementById(recipeId), true);
+} else if (query) {
+    selectCategory(document.getElementById('all'));
+    bar.value = query;
+    search(query);
+}  else {
+    selectCategory(document.getElementById('all'));
+}
+
+
+
+function selectCategory(element, update) {
+    if (update){
+        bar.value = '';
+        const selectedCategory = element.getAttribute('data-category');
+        const recipes = document.querySelectorAll('.fil');
+        
+        let visibleCount = 0;
+
+        recipes.forEach(recipe => {
+            const recipeCategory = recipe.getAttribute('data-category');
+            if (selectedCategory === 'all' || recipeCategory === selectedCategory) {
+                recipe.style.display = 'block';
+                visibleCount++;
+            } else {
+                recipe.style.display = 'none';
+            }
+        });
+        updateTiles(visibleCount);
+    }
+
+    // Update the selected filter styling
+    const filters = document.querySelectorAll('.filters p');
+    filters.forEach(filter => filter.classList.remove('selected'));
+    element.classList.add('selected');
+}
+
+bar.addEventListener('input', function() {
+    const searchQuery = this.value.toLowerCase(); // Get search input
+    search(searchQuery);
+});
+
+function search(sQuery) { 
+    selectCategory (document.getElementById('all'));
+    const tiles = document.querySelectorAll('.tile'); // Get all recipe tiles
+    let visibleCount = 0;
+    // Loop through each tile and check if it matches the search query
+    tiles.forEach(tile => {
+        const recipeName = tile.querySelector('p').textContent.toLowerCase(); // Get the recipe name text
+        if (recipeName.includes(sQuery)) {
+            tile.parentElement.style.display = 'block'; // Show tile if it matches
+            visibleCount++;
+        } else {
+            tile.parentElement.style.display = 'none'; // Hide tile if it doesn't match
+        }
+    });
+    updateTiles(visibleCount);
+}
+
+function updateTiles(visibleCount) {
+    if (visibleCount <= 4) {
+        mainContainer.style.justifyContent = 'flex-start'; // Left align if 4 or fewer items
+        mainContainer.style.marginBottom = '28.24vh';
+    } else if (visibleCount <= 5) {
+        mainContainer.style.marginBottom = '28.24vh';
+    }else {
+        mainContainer.style.marginBottom = '3.24vh';
+        mainContainer.style.justifyContent = 'center'; // Center align if more than 3 items
+    }
+}
+    </script>
+    <!-- <script src="explore.js"></script> -->
 </body>
 </html>

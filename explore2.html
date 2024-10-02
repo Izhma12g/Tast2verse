@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="explore.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Tastiverse</title>
+</head>
+<body>
+    <div class="navbar" id="navbar">
+        <a href="index.html"><img src="img/tLogo.png" class="navLogo"></a>
+        <a href="index.html"><p class="navTxt">Home</p></a>
+        <a class="navTxt" href="explore.html">Explore</a>
+        <p class="navTxt" style="color: #835d2b;">Create</p>
+        <p class="navTxt" style="color: #835d2b;">Kitchen Tips</p>
+        <a class="navTxt" href="aboutus.html">About Us</a>
+        <input type="text" id="bar" placeholder="What recipe are you after?">
+        <img onclick="search()" src="img/search.png" style="width: 18px; margin-left: -34px;" id="btn">
+    </div>
+
+    <div class="wrapper">
+        <div class="filters">
+            <h2>Explore Recipes</h2>
+            <div class="buttons">
+                <p onclick="selectCategory(this, true)" id="all" data-category="all">All</p>
+                <p onclick="selectCategory(this, true)" data-category="breakfast">Breakfast</p>
+                <p onclick="selectCategory(this, true)" id="lunch" data-category="lunch">Lunch</p>
+                <p onclick="selectCategory(this, true)" id="dinner" data-category="dinner">Dinner</p>
+                <p onclick="selectCategory(this, true)" id="dessert" data-category="dessert">Dessert</p>
+                <p onclick="selectCategory(this, true)" id="drinks" data-category="drinks" style="border-radius: 0 1.5vw 0 0;">Drinks</p>
+            </div>
+        </div>
+
+        <div class="main">
+            <!-- Dynamic recipe tiles will be added here -->
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 Tastiverse. All rights reserved.</p>
+        <div class="icons">
+            <img src="img/icons/txt.png">
+            <div class="iLinks">
+                <a href="https://twitter.com"><img src="img/icons/t.png"></a>
+                <a href="https://facebook.com"><img src="img/icons/f.png"></a>
+                <a href="https://nz.pinterest.com/search/pins/?q=juicy%20dinner&rs=typed"><img src="img/icons/p.png"></a>
+                <a href="https://instagram.com"><img src="img/icons/cam.png"></a>
+            </div>
+        </div>  
+    </footer>
+
+    <script>
+        const mainContainer = document.querySelector('.main');
+        const urlParams = new URLSearchParams(window.location.search);
+        const query = urlParams.get('search');
+        const bar = document.getElementById('bar');
+
+        // Load recipes from recipes.json and create tiles dynamically
+        async function loadRecipes() {
+            try {
+                const response = await fetch('/recipes.json');  // Ensure the correct path to your JSON file
+                const recipes = await response.json();
+
+                recipes.forEach((recipe, index) => {
+                    const tile = document.createElement('a');
+                    tile.href = `recipe.html?id=${index}`;
+                    tile.classList.add('fil');
+                    tile.setAttribute('data-category', recipe.category);  // Assuming each recipe has a category
+
+                    tile.innerHTML = `
+                        <div class="tile">
+                            <div style="height: 70%;">
+                                <img src="${recipe.image}" class="tImg">
+                            </div>
+                            <div class="text">
+                                <p style="margin-bottom: 9px;">${recipe.title}</p>
+                                <div style="width: 100%; display: flex; justify-content: center;">
+                                    <img src="img/stars/3star.png" style="height: 23px; margin-right: 17px;">
+                                    <p>${Math.floor(Math.random() * 100)}</p>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    mainContainer.appendChild(tile);
+                });
+            } catch (error) {
+                console.error('Error loading recipes:', error);
+            }
+        }
+
+        // Call the loadRecipes function to populate the page with recipes
+        loadRecipes();
+
+        // Category filter function
+        function selectCategory(element, update) {
+            if (update){
+                bar.value = '';
+                const selectedCategory = element.getAttribute('data-category');
+                const recipes = document.querySelectorAll('.fil');
+                
+                let visibleCount = 0;
+
+                recipes.forEach(recipe => {
+                    const recipeCategory = recipe.getAttribute('data-category');
+                    if (selectedCategory === 'all' || recipeCategory === selectedCategory) {
+                        recipe.style.display = 'block';
+                        visibleCount++;
+                    } else {
+                        recipe.style.display = 'none';
+                    }
+                });
+                updateTiles(visibleCount);
+            }
+
+            // Update the selected filter styling
+            const filters = document.querySelectorAll('.filters p');
+            filters.forEach(filter => filter.classList.remove('selected'));
+            element.classList.add('selected');
+        }
+
+        bar.addEventListener('input', function() {
+            const searchQuery = this.value.toLowerCase(); // Get search input
+            search(searchQuery);
+        });
+
+        function search(sQuery) { 
+            selectCategory(document.getElementById('all'));
+            const tiles = document.querySelectorAll('.tile'); // Get all recipe tiles
+            let visibleCount = 0;
+            // Loop through each tile and check if it matches the search query
+            tiles.forEach(tile => {
+                const recipeName = tile.querySelector('p').textContent.toLowerCase(); // Get the recipe name text
+                if (recipeName.includes(sQuery)) {
+                    tile.parentElement.style.display = 'block'; // Show tile if it matches
+                    visibleCount++;
+                } else {
+                    tile.parentElement.style.display = 'none'; // Hide tile if it doesn't match
+                }
+            });
+            updateTiles(visibleCount);
+        }
+
+        function updateTiles(visibleCount) {
+            if (visibleCount <= 4) {
+                mainContainer.style.justifyContent = 'flex-start'; // Left align if 4 or fewer items
+                mainContainer.style.marginBottom = '28.24vh';
+            } else if (visibleCount <= 5) {
+                mainContainer.style.marginBottom = '28.24vh';
+            } else {
+                mainContainer.style.marginBottom = '3.24vh';
+                mainContainer.style.justifyContent = 'center'; // Center align if more than 3 items
+            }
+        }
+    </script>
+</body>
+</html>

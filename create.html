@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Recipe</title>
+</head>
+<body>
+    <h1>Create New Recipe</h1>
+    <form id="recipeForm">
+        <label for="title">Recipe Title:</label><br>
+        <input type="text" id="title" name="title" required><br><br>
+
+        <label for="image">Image URL:</label><br>
+        <input type="text" id="image" name="image" required><br><br>
+
+        <label for="ingredients">Ingredients (comma separated):</label><br>
+        <textarea id="ingredients" name="ingredients" rows="4" cols="50" required></textarea><br><br>
+
+        <label for="steps">Preparation Steps:</label><br>
+        <textarea id="steps" name="steps" rows="6" cols="50" required></textarea><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <div id="message"></div>
+
+    <script>
+        document.getElementById('recipeForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            const title = document.getElementById('title').value;
+            const image = document.getElementById('image').value;
+            const ingredients = document.getElementById('ingredients').value.split(',');
+            const steps = document.getElementById('steps').value;
+
+            const recipe = {
+                title: title,
+                image: image,
+                ingredients: ingredients.map(ingredient => ingredient.trim()),
+                steps: steps
+            };
+
+            try {
+                const response = await fetch('/saveRecipe', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(recipe)
+                });
+
+                const result = await response.json();
+
+                document.getElementById('message').innerText = result.message;
+            } catch (error) {
+                console.error('Error:', error);  // Log the actual error in the browser console
+                document.getElementById('message').innerText = 'Error saving recipe.';
+            }   
+
+        });
+    </script>
+</body>
+</html>

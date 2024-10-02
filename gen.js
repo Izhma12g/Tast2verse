@@ -188,8 +188,6 @@ const recipes = [
         ],
         steps: `In a large pot, brown the beef cubes on all sides. Remove from the pot and set aside. In the same pot, sauté the onion and garlic until soft. Add the carrots and potatoes and cook for a few minutes. <br><br>Return the beef to the pot and add the beef broth, tomato paste, Worcestershire sauce, thyme, salt, and pepper. Bring to a simmer. <br><br>Cover the pot and cook on low heat for 2-3 hours, until the beef is tender and the vegetables are cooked through. Serve this hearty beef stew with crusty bread for a warming meal on a cold day! `
     },
-    
-    // Iced Bubble Tea
     {
         title: "Iced Bubble Tea",
         image: "img/drink.jpg",
@@ -205,7 +203,6 @@ const recipes = [
 ];
 const urlParams = new URLSearchParams(window.location.search);
 const recipeId = urlParams.get('id');
-console.log(recipeId);
 if (recipeId) {
     generateRecipePage(recipes[recipeId]);
 }
@@ -216,12 +213,12 @@ function generateRecipePage(recipe) {
     const ingredientsRight = recipe.ingredients.slice(half);
     const recipeHtml = `
         <div class="navbar" id="navbar">
-        <a href="index.htm"><img src="img/tLogo.png" class="navLogo"></a>
-        <a href="index.htm"><p class="navTxt">Home</p></a>
-        <a class="navTxt" href="explore.htm">Explore</a>
+        <a href="index.html"><img src="img/tLogo.png" class="navLogo"></a>
+        <a href="index.html"><p class="navTxt">Home</p></a>
+        <a class="navTxt" href="explore.html">Explore</a>
         <p class="navTxt" style="color: #835d2b;">Create</p>
         <p class="navTxt" style="color: #835d2b;">Kitchen Tips</p>
-        <a class="navTxt" href="aboutus.htm">About Us</a>
+        <a class="navTxt" href="aboutus.html">About Us</a>
         <input type="text" placeholder="What recipe are you after?">
          <img onclick="search()" src="img/search.png" style="width: 18px; margin-left: -34px;" id="btn">
     </div>
