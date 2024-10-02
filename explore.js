@@ -25,7 +25,7 @@ async function loadRecipes() {
                     <div class="text">
                         <p style="margin-bottom: 9px;">${recipe.title}</p>
                         <div style="width: 100%; display: flex; justify-content: center;">
-                            <img src="img/stars/${recipe.rating}star.png" style="height: 23px; margin-right: 17px;">
+                            <img src="img/stars/${recipe.rating}star.png" class="star">
                             <p>${recipe.rating_count}</p>
                         </div>
                     </div>
