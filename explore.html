@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="explore.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Tastiverse</title>
+</head>
+<body>
+    <div class="navbar" id="navbar">
+        <a href="index.html"><img src="img/tLogo.png" class="navLogo"></a>
+        <a href="index.html"><p class="navTxt">Home</p></a>
+        <a class="navTxt" href="explore.html">Explore</a>
+        <p class="navTxt" style="color: #835d2b;">Create</p>
+        <p class="navTxt" style="color: #835d2b;">Kitchen Tips</p>
+        <a class="navTxt" href="aboutus.html">About Us</a>
+        <input type="text" id="bar" placeholder="What recipe are you after?">
+        <img onclick="search()" src="img/search.png" style="width: 18px; margin-left: -34px;" id="btn">
+    </div>
+
+    <div class="wrapper">
+        <div class="filters">
+            <h2>Explore Recipes</h2>
+            <div class="buttons">
+                <p onclick="selectCategory(this, true)" id="all" data-category="all">All</p>
+                <p onclick="selectCategory(this, true)" data-category="breakfast">Breakfast</p>
+                <p onclick="selectCategory(this, true)" id="lunch" data-category="lunch">Lunch</p>
+                <p onclick="selectCategory(this, true)" id="dinner" data-category="dinner">Dinner</p>
+                <p onclick="selectCategory(this, true)" id="dessert" data-category="dessert">Dessert</p>
+                <p onclick="selectCategory(this, true)" id="drinks" data-category="drinks" style="border-radius: 0 1.5vw 0 0;">Drinks</p>
+            </div>
+        </div>
+
+        <div class="main">
+            <!-- Dynamic recipe tiles will be added here -->
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 Tastiverse. All rights reserved.</p>
+        <div class="icons">
+            <img src="img/icons/txt.png">
+            <div class="iLinks">
+                <a href="https://twitter.com"><img src="img/icons/t.png"></a>
+                <a href="https://facebook.com"><img src="img/icons/f.png"></a>
+                <a href="https://nz.pinterest.com/search/pins/?q=juicy%20dinner&rs=typed"><img src="img/icons/p.png"></a>
+                <a href="https://instagram.com"><img src="img/icons/cam.png"></a>
+            </div>
+        </div>  
+    </footer>
+
+    <script src="explore.js"></script>
+</body>
+</html>
