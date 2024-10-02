@@ -70,6 +70,35 @@ h1 {
     justify-content: space-between;
     align-items: flex-start;
 }
+.tile {
+    overflow: hidden;
+    background: #E6D9AB;
+    width: 15.79vw;
+    height: 30.19vh;
+    display: flex;
+    border-radius: 0.52vw;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.15vw;
+    border: #000000 0.2vw solid;
+}
+.star {
+    width: 6.945vw;
+    object-fit: contain;
+    margin-right: 17px;
+}
+.tImg {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+.text {
+    color: black;
+    height: 32%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 form {
     flex: 1;
     margin-right: 2rem;
