@@ -9,5 +9,5 @@ input.addEventListener("keyup", function(event) {
 });
 
 function search() {
-    window.location.replace('explore.htm?search=' + query);
+    window.location.replace('explore.html?search=' + query);
 }
