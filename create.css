@@ -8,6 +8,7 @@ body {
     background-color: #F5E6CC;
     width: 100%;
 }
+/* ==================================== NAVBAR ==================================== */
 .navbar {
     display: flex;
     align-items: center;
@@ -28,13 +29,13 @@ body {
     width: 11vw;
     display: block;
 }
-input {
+.navbar input {
     padding-left: 1vw;
-    margin-left: 13vw;
+    margin-left: 11vw;
     width: 27.56vw;
     height: 5vh;
     background: #FFFFFF;
-    color: black;
+    color: #7A7A7A;
     border-color: #232323;
     border-width: 0.1vw;
     border-style: solid;
@@ -43,62 +44,37 @@ input {
     font-size: 1.17vw;
     text-align: left;
 }
-.text p {
-    text-align: center;
-}
+/* ==================================== MAIN ==================================== */
 .wrapper {
     margin: 0 5.5vw;
 }
-.filters {
-    border: #606060 0.2vw solid;
-    border-radius: 0 1.5vw 0 1.5vw;
-    align-items: center;
-    height: 8.89vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    background: #333333;
-    margin-bottom: 2.41vh;
-}
-.filters h2 {
-    margin-left: 1.04vw;
-    font-weight: normal;
-    color: #ECAB55;
-    font-size: 3.229vw;
-    margin-right: 1.5vw;
-}
-.filters p {
-    cursor: pointer;
-    line-height: 8.89vh;
-    padding: 0 0.78vw;
-    height: 100%;
-    border-left: #606060 0.2vw solid;
-    font-weight: normal;
-    color: #ECAB55;
-    font-size: 1.5vw;
+h1 {
+    padding-left: 1.20vw;
+    width: 100%;
+    color: #000000;
+    font-family: "Helvetica";
+    font-weight: bold;
+    font-size: 3.33vw;
     text-align: left;
+    margin-bottom: 2.22vh;
 }
-.buttons {
-    height: 100%;
-    display: flex;
-    align-items: center;
-}
-.selected {
-    background: #444444;
-    color: #F5E6CC !important;
-}
-.main {
-    display: flex;
-    padding: 1.85vh;
-    background: #B8A283;
-    border-radius: 0.52vw;
+
+.box {
+    padding: 1.211vw;
+    background: #E6D9AB;
     border: #000000 0.2vw solid;
+    border-radius: 1.3vw;
+    display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    gap: 1.3vw;
-    margin-bottom: 3.24vh;
+    margin-bottom: 9vh;
 }
+#display {
+    width: 100%;
+    padding: 30px;
+}
+
 .tile {
+    margin-top: 4vh;
     overflow: hidden;
     background: #E6D9AB;
     width: 15.79vw;
@@ -122,13 +98,22 @@ input {
     flex-direction: column;
     justify-content: center;
 }
+form {
+    width: 100%;
+}
+textarea {
+    width: 100%;
+    resize: none;
+    font-size: 0.85vw;
+}
+/* ==================================== FOOTER ==================================== */
 a {
     text-decoration: none;
 }
 footer {
     background-color: #e6d9abd2;
     height: 10vh;
-    position: relative;
+    position: relative; 
     padding: 0 2.25vw;
 }
 footer p {
