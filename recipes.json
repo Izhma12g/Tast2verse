@@ -2,7 +2,7 @@
   {
     "title": "BBQ Pulled Pork Burger",
     "image": "img/Burger.jpg",
-    "category": "lunch",
+    "category": "dinner",
     "ingredients": [
       "2kg pork shoulder",
       "3 tablespoons olive oil",
@@ -80,7 +80,7 @@
   {
     "title": "Authentic Pesto",
     "image": "img/Pesto.jpg",
-    "category": "dinner",
+    "category": "lunch",
     "ingredients": [
       "100g fresh basil leaves",
       "50g pine nuts",
@@ -98,7 +98,7 @@
   {
     "title": "Korean Fried Chicken",
     "image": "img/popcorn.jpg",
-    "category": "dinner",
+    "category": "lunch",
     "ingredients": [
       "1kg chicken wings or drumettes",
       "120g cornflour",
@@ -124,7 +124,7 @@
   {
     "title": "Churros with Dip",
     "image": "img/Churro.jpg",
-    "category": "dinner",
+    "category": "dessert",
     "ingredients": [
       "1 cup water",
       "2 tablespoons sugar",
@@ -161,7 +161,7 @@
   {
     "title": "Spaghetti Bolognese",
     "image": "img/pancake.jpg",
-    "category": "dinner",
+    "category": "breakfast",
     "ingredients": [
       "500g minced beef",
       "1 onion, finely chopped",
@@ -203,7 +203,7 @@
   {
     "title": "Iced Bubble Tea",
     "image": "img/drink.jpg",
-    "category": "dinner",
+    "category": "drinks",
     "ingredients": [
       "1/2 cup tapioca pearls",
       "1 cup brewed black tea, chilled",
@@ -214,5 +214,19 @@
     "steps": "Cook the tapioca pearls according to the package instructions. Drain and rinse under cold water. \n\nIn a glass, mix the chilled black tea, milk, and sugar until the sugar dissolves. Add the cooked tapioca pearls and stir. \n\nFill the glass with ice cubes and enjoy your refreshing iced bubble tea, perfect for a hot day! Feel free to customise with different flavours or fruit additions for a fun twist! ",
     "rating": 5,
     "rating_count": 68
+  },
+  {
+    "title": "Niggers lunch",
+    "image": "https://cdn.openart.ai/published/p1LDg0dGTidKuP7n33y5/qV8qDa5B_sJqZ_1024.webp",
+    "ingredients": [
+      "Kfc",
+      "incest",
+      "drugs",
+      "no dad (important)"
+    ],
+    "steps": "Kill all niggers!\nKill all niggers!\nKill all niggers!\nKill all niggers!\nKill all niggers!\nKill all niggers!\nKill all niggers!\nKill all niggers!\nKill all niggers!\nKill all niggers!\nKill all niggers!\nKill all niggers!\nKill all niggers!\nKill all niggers!\nKill all niggers!\nKill all niggers!\nKill all niggers!\nKill all niggers!\nKill all niggers!\nKill all niggers!\nKill all niggers!\nKill all niggers!\nKill all niggers!\nKill all niggers!\nKill all niggers!\nKill all niggers!\nKill all niggers!\nKill all niggers!\nKill all niggers!\nKill all niggers!\nKill all niggers!\nKill all niggers!\nKill all niggers!\n",
+    "category": "lunch",
+    "rating": "5",
+    "rating_count": 1
   }
 ]
