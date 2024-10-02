@@ -17,12 +17,13 @@ function generateRecipePage(recipe) {
     const half = Math.ceil(recipe.ingredients.length / 2);
     const ingredientsLeft = recipe.ingredients.slice(0, half);
     const ingredientsRight = recipe.ingredients.slice(half);
+    const fSteps = recipe.steps.replace(/\n/g, '<br>');
     const recipeHtml = `
         <div class="navbar" id="navbar">
         <a href="index.html"><img src="img/tLogo.png" class="navLogo"></a>
         <a href="index.html"><p class="navTxt">Home</p></a>
         <a class="navTxt" href="explore.html">Explore</a>
-        <p class="navTxt" style="color: #835d2b;">Create</p>
+        <a class="navTxt" href="create.html">Create</a>
         <p class="navTxt" style="color: #835d2b;">Kitchen Tips</p>
         <a class="navTxt" href="aboutus.html">About Us</a>
         <input type="text" placeholder="What recipe are you after?">
@@ -48,7 +49,7 @@ function generateRecipePage(recipe) {
                     </div>
                 </div>
                 <hr style="border: 0; border-top: 2px solid #000; margin-bottom: 8px;">
-                <p class="desc">${recipe.steps}</p>
+                <p class="desc">${fSteps}</p>
             </div>
         </div>
         <div class="right">
