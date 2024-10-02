@@ -1,20 +1,45 @@
 const mainContainer = document.querySelector('.main');
 const urlParams = new URLSearchParams(window.location.search);
 const query = urlParams.get('search');
-const recipeId = urlParams.get('id');
 const bar = document.getElementById('bar');
-if (recipeId) {
-    selectCategory(document.getElementById(recipeId), true);
-} else if (query) {
-    selectCategory(document.getElementById('all'));
-    bar.value = query;
-    search(query);
-}  else {
-    selectCategory(document.getElementById('all'), true);
+
+// Load recipes from recipes.json and create tiles dynamically
+async function loadRecipes() {
+    try {
+        const response = await fetch('/recipes.json');  // path to JSON file
+        const recipes = await response.json();
+
+        recipes.forEach((recipe, index) => {
+            const tile = document.createElement('a');
+            tile.href = `recipe.html?id=${index}`;
+            tile.classList.add('fil');
+            tile.setAttribute('data-category', recipe.category);
+
+            tile.innerHTML = `
+                <div class="tile">
+                    <div style="height: 68%; width: 100%;">
+                        <img src="${recipe.image}" class="tImg">
+                    </div>
+                    <div class="text">
+                        <p style="margin-bottom: 9px;">${recipe.title}</p>
+                        <div style="width: 100%; display: flex; justify-content: center;">
+                            <img src="img/stars/${recipe.rating}star.png" style="height: 23px; margin-right: 17px;">
+                            <p>${recipe.rating_count}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+            mainContainer.appendChild(tile);
+        });
+    } catch (error) {
+        console.error('Error loading recipes:', error);
+    }
 }
 
+// Call the loadRecipes function to populate the page with recipes
+loadRecipes();
 
-
+// Category filter function
 function selectCategory(element, update) {
     if (update){
         bar.value = '';
@@ -47,7 +72,7 @@ bar.addEventListener('input', function() {
 });
 
 function search(sQuery) { 
-    selectCategory (document.getElementById('all'));
+    selectCategory(document.getElementById('all'));
     const tiles = document.querySelectorAll('.tile'); // Get all recipe tiles
     let visibleCount = 0;
     // Loop through each tile and check if it matches the search query
@@ -64,13 +89,9 @@ function search(sQuery) {
 }
 
 function updateTiles(visibleCount) {
-    if (visibleCount <= 4) {
-        mainContainer.style.justifyContent = 'flex-start'; // Left align if 4 or fewer items
+    if (visibleCount <= 5) {
         mainContainer.style.marginBottom = '28.24vh';
-    } else if (visibleCount <= 5) {
-        mainContainer.style.marginBottom = '28.24vh';
-    }else {
+    } else {
         mainContainer.style.marginBottom = '3.24vh';
-        mainContainer.style.justifyContent = 'center'; // Center align if more than 3 items
     }
 }

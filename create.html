@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="create.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Tastiverse</title>
+</head>
+<body>
+    <div class="navbar" id="navbar">
+        <a href="index.html"><img src="img/tLogo.png" class="navLogo"></a>
+        <a href="index.html"><p class="navTxt">Home</p></a>
+        <a class="navTxt" href="explore.html">Explore</a>
+        <p class="navTxt">Create</p>
+        <p class="navTxt" style="color: #835d2b;">Kitchen Tips</p>
+        <a class="navTxt" href="aboutus.html">About Us</a>
+        <input type="text" placeholder="What recipe are you after?">
+        <img onclick="search()" src="img/search.png" style="width: 18px; margin-left: -34px;" id="btn">
+    </div>
+    <div class="wrapper">
+        <h1>Create New Recipe</h1>
+            <div class="box">
+                <form id="recipeForm">
+                    <label for="title">Recipe Title:</label>
+                    <input type="text" id="title" name="title" class="til" required>
+                    <label for="rating">Your Rating:</label>
+                    <select id="rating" name="rating" class="til" required>
+                        <option value="1">1 Star</option>
+                        <option value="2">2 Star</option>
+                        <option value="3">3 Star</option>
+                        <option value="4">4 Star</option>
+                        <option value="5" selected>5 Star</option>
+                    </select>
+                    <label for="category">Category:</label>
+                    <select id="category" name="category" required>
+                        <option value="dinner">Dinner</option>
+                        <option value="lunch">Lunch</option>
+                        <option value="breakfast">Breakfast</option>
+                        <option value="dessert">Dessert</option>
+                        <option value="drinks">Drinks</option>
+                    </select><br><br>
+                    <label for="image">Image URL:</label>
+                    <input type="text" id="image" name="image" class="til" style="width: 100%;"><br><br>
+            
+                    <label for="ingredients">Ingredients (comma separated):</label><br>
+                    <textarea id="ingredients" name="ingredients" rows="4" cols="50" style="height: 5vh;"></textarea><br><br>
+            
+                    <label for="steps">Recipe Step by Step Instructions:</label><br>
+                    <textarea id="steps" name="steps" rows="6" cols="50" style="height: 25vh;" required></textarea><br><br>
+        
+                    
+            
+                    <button type="submit">Submit</button>
+                    <p id="message"></p>
+                </form>
+                <div id="display">
+                    <h2>Image tile thumbanil preview</h2>
+                    <p style="font-weight: 400;">If the image doesnt look centred, make sure you're using a 4:3 aspect ratio for best results</p>
+
+                </div>
+            </div>
+        
+    
+        <div id="message"></div>
+    </div>
+    <footer>
+        <p>© 2024 Tastiverse. All rights reserved.</p>
+        <div class="icons">
+            <img src="img/icons/txt.png">
+            <div class="iLinks">
+                <a href="#"><img src="img/icons/t.png"></a>
+                <a href="#"><img src="img/icons/f.png"></a>
+                <a href="#"><img src="img/icons/p.png"></a>
+                <a href="#"><img src="img/icons/cam.png"></a>
+            </div>
+        </div>  
+    </footer>
+    <script src="create.js"></script>
+    <script src="search.js"></script>
+</body>
+</html>
