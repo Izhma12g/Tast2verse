@@ -98,8 +98,8 @@ form.addEventListener('submit', async function(event) {
         });
 
         const result = await response.json();
-
-        document.getElementById('message').innerText = result.message;
+        msg.style.color = 'green';
+        msg.innerText = result.message;
     } catch (error) {
         msg.innerText = 'Error saving recipe.';
     }
