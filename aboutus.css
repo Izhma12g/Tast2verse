@@ -2,8 +2,14 @@
     margin: 0;
     padding: 0;
 }
-
+html {
+    height: 100%;
+}
 body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
     font-family: "Helvetica";
     font-weight: bold;
     background-color: #F5E6CC;
