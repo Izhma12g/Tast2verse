@@ -1,34 +1,34 @@
 * {
     margin: 0;
     padding: 0;
-    }
-    body {
+}
+body {
     font-family: "Helvetica";
     font-weight: bold;
     background-color: #F5E6CC;
     width: 100%;
-    }
-    .navbar {
+}
+.navbar {
     display: flex;
     align-items: center;
     width: 100%;
     height: 10vh;
     background: #333333;
     margin-bottom: 5.3vh;
-    }
-    .navTxt {
+}
+.navTxt {
     color: #ECAB55;
     font-size: 1.5vw;
     text-align: left;
     margin-right: 2.13vw;
-    }
-    .navLogo {
+}
+.navLogo {
     margin-left: 1.15vw;
     margin-right: 2vw;
     width: 11vw;
     display: block;
-    }
-    input {
+}
+input {
     padding-left: 1vw;
     margin-left: 13vw;
     width: 27.56vw;
@@ -42,14 +42,14 @@
     font-weight: 400;
     font-size: 1.17vw;
     text-align: left;
-    }
-    .text p {
-        text-align: center;
-    }
-    .wrapper {
+}
+.text p {
+    text-align: center;
+}
+.wrapper {
     margin: 0 5.5vw;
-    }
-    .filters {
+}
+.filters {
     border: #606060 0.2vw solid;
     border-radius: 0 1.5vw 0 1.5vw;
     align-items: center;
@@ -59,15 +59,15 @@
     justify-content: space-between;
     background: #333333;
     margin-bottom: 2.41vh;
-    }
-    .filters h2 {
+}
+.filters h2 {
     margin-left: 1.04vw;
     font-weight: normal;
     color: #ECAB55;
     font-size: 3.229vw;
     margin-right: 1.5vw;
-    }
-    .filters p {
+}
+.filters p {
     cursor: pointer;
     line-height: 8.89vh;
     padding: 0 0.78vw;
@@ -77,17 +77,17 @@
     color: #ECAB55;
     font-size: 1.5vw;
     text-align: left;
-    }
-    .buttons {
+}
+.buttons {
     height: 100%;
     display: flex;
     align-items: center;
-    }
-    .selected {
+}
+.selected {
     background: #444444;
     color: #F5E6CC !important;
-    }
-    .main {
+}
+.main {
     display: flex;
     padding: 1.85vh;
     background: #B8A283;
@@ -97,8 +97,8 @@
     flex-wrap: wrap;
     gap: 1.04vw;
     margin-bottom: 3.24vh;
-    }
-    .tile {
+}
+.tile {
     overflow: hidden;
     background: #E6D9AB;
     width: 15.79vw;
@@ -109,29 +109,29 @@
     align-items: center;
     font-size: 1.15vw;
     border: #000000 0.2vw solid;
-    }
-    .tImg {
-    object-fit: contain;
+}
+.tImg {
+    object-fit: cover;
     height: 100%;
-    border-radius: 0.52vw 0.52vw 0 0;
-    }
-    .text {
+    width: 100%;
+}
+.text {
     color: black;
-    height: 100%;
+    height: 32%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    }
-    a {
+}
+a {
     text-decoration: none;
-    }
-    footer {
+}
+footer {
     background-color: #e6d9abd2;
     height: 10vh;
     position: relative;
     padding: 0 2.25vw;
-    }
-    footer p {
+}
+footer p {
     position: absolute;
     left: 2.25vw;
     top: 50%;
@@ -139,8 +139,8 @@
     font-weight: 400;
     color: #4F4F4F;
     margin: 0;
-    }
-    .icons {
+}
+.icons {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -148,14 +148,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    }
-    .iLinks {
+}
+.iLinks {
     margin-top: 0.9vh;
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    }
-    .icons img {
+}
+.icons img {
     height: 20px;
-    }
+}
