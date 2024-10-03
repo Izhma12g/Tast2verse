@@ -60,11 +60,11 @@ function generateRecipePage(recipe) {
                     <div class="latestAll">
                         <div class="latestTxt">
                             <h3>Dinner Recipe</h3>
-                            <p class="name">Texas Style BBQ<br>Ribs With Secret Sauce </p>
+                            <p class="name">Texas Style BBQ Ribs<br>With Secret Sauce </p>
                             <p class="time">2 Hours Cooking time</p>
                             <div class="rating">
-                                <img src="img/stars/5star.png" style="width: 6vw;">
-                                <h2>64</h2>
+                                <img src="img/stars/3star.png" style="width: 6vw;">
+                                <h2>197</h2>
                             </div>
                         </div>
                         <img src="img/steak.jpg" style="width: 6.25vw; height: 12.592vh; object-fit: cover; margin-right: 10px;">
@@ -80,8 +80,8 @@ function generateRecipePage(recipe) {
                             <p class="name">15 Minute Homemade <br> Iced Bubble tea </p>
                             <p class="time">30 Minutes Preperation</p>
                             <div class="rating">
-                                <img src="img/stars/3star.png" style="width: 6vw;">
-                                <h2>128</h2>
+                                <img src="img/stars/5star.png" style="width: 6vw;">
+                                <h2>68</h2>
                             </div>
                         </div>
                         <img src="img/drink.jpg" style="object-position: -56px; width: 6.25vw; height: 12.592vh; object-fit: cover; margin-right: 10px;">
@@ -98,7 +98,7 @@ function generateRecipePage(recipe) {
                             <p class="time">1.5 Hours Cooking time</p>
                             <div class="rating">
                                 <img src="img/stars/4star.png" style="width: 6vw;">
-                                <h2>64</h2>
+                                <h2>153</h2>
                             </div>
                         </div>
                         <img src="img/pesto.jpg" style="width: 6.25vw; height: 12.592vh; object-fit: cover; margin-right: 10px;">
@@ -114,8 +114,8 @@ function generateRecipePage(recipe) {
                             <p class="name">Sweet Korean Fried<br>Chicken Popcorn</p>
                             <p class="time">30 Minutes Cooking time</p>
                             <div class="rating">
-                                <img src="img/stars/1star.png" style="width: 6vw;">
-                                <h2>24</h2>
+                                <img src="img/stars/5star.png" style="width: 6vw;">
+                                <h2>210</h2>
                             </div>
                         </div>
                         <img src="img/popcorn.jpg" style="width: 6.25vw; height: 12.592vh; object-fit: cover; margin-right: 10px;">

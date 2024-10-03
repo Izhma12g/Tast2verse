@@ -22,7 +22,7 @@ function preview(recipe) {
                 <img src="${recipe.image}" class="tImg">
             </div>
             <div class="text">
-                <p style="margin-bottom: 9px;">${recipe.title}</p>
+                <p style="margin-bottom: 9px; font-weight: bold;">${recipe.title}</p>
                 <div style="width: 100%; display: flex; justify-content: center;">
                     <img src="img/stars/${recipe.rating}star.png" style="height: 23px; margin-right: 17px;">
                     <p>1</p>
@@ -104,3 +104,4 @@ form.addEventListener('submit', async function(event) {
         msg.innerText = 'Error saving recipe.';
     }
 });
+
