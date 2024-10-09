@@ -14,12 +14,27 @@ async function loadRecipe() {
 
 
 function generateRecipePage(recipe) {
+    const headHtml = `
+        <title>${recipe.title}</title>
+        <meta name="description" content="${recipe.description}">
+        <meta property="og:title" content="${recipe.title}">
+        <meta property="og:description" content="${recipe.description}">
+        <meta property="og:image" content="${recipe.image}">
+        <meta property="og:url" content="${window.location.href}">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="${recipe.title}">
+        <meta name="twitter:description" content="${recipe.description}">
+        <meta name="twitter:image" content="${recipe.image}">
+        <link rel="icon" type="image/x-icon" href="${recipe.image}">
+    `;
+    document.head.innerHTML += headHtml;
+
     const half = Math.ceil(recipe.ingredients.length / 2);
     const ingredientsLeft = recipe.ingredients.slice(0, half);
     const ingredientsRight = recipe.ingredients.slice(half);
     const fSteps = recipe.steps.replace(/\n/g, '<br>');
     const recipeHtml = `
-        <div class="navbar" id="navbar">
+    <div class="navbar" id="navbar">
         <a href="index.html"><img src="img/tLogo.png" class="navLogo"></a>
         <a href="index.html"><p class="navTxt">Home</p></a>
         <a class="navTxt" href="explore.html">Explore</a>
@@ -140,4 +155,7 @@ function generateRecipePage(recipe) {
     `;
     
     document.body.innerHTML = recipeHtml;
+    const script = document.createElement('script');
+    script.src = 'search.js'; // Path to your external script
+    document.body.appendChild(script);
 }
