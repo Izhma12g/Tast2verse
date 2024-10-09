@@ -42,6 +42,7 @@ app.post('/saveRecipe', (req, res) => {
 
 // Endpoint to serve recipe pages
 app.get('/recipe.html', (req, res) => {
+    console.log('Request for recipe page:');
     const recipeId = req.query.id; // Get the recipe ID from the query string
     const filePath = path.join(__dirname, 'recipes.json');
 
@@ -61,12 +62,17 @@ app.get('/recipe.html', (req, res) => {
         const recipe = recipes[recipeId]; // Find the relevant recipe
 
         if (recipe) {
+            const half = Math.ceil(recipe.ingredients.length / 2);
+            const ingredientsLeft = recipe.ingredients.slice(0, half);
+            const ingredientsRight = recipe.ingredients.slice(half);
+            const fSteps = recipe.steps.replace(/\n/g, '<br>');
             // Generate the HTML content with Open Graph tags
             const html = `
             <!DOCTYPE html>
             <html lang="en">
             <head>
                 <meta charset="UTF-8">
+                <link rel="stylesheet" href="recipe.css">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <title>${recipe.title}</title>
                 <meta name="description" content="${recipe.description}">
