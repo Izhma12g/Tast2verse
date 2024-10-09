@@ -16,15 +16,10 @@ async function loadRecipe() {
 function generateRecipePage(recipe) {
     const headHtml = `
         <title>${recipe.title}</title>
-        <meta name="description" content="${recipe.description}">
         <meta property="og:title" content="${recipe.title}">
-        <meta property="og:description" content="${recipe.description}">
+        <meta property="og:description" content="Hello test">
         <meta property="og:image" content="${recipe.image}">
         <meta property="og:url" content="${window.location.href}">
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="${recipe.title}">
-        <meta name="twitter:description" content="${recipe.description}">
-        <meta name="twitter:image" content="${recipe.image}">
         <link rel="icon" type="image/x-icon" href="${recipe.image}">
     `;
     document.head.innerHTML += headHtml;
