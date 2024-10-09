@@ -41,7 +41,7 @@ app.post('/saveRecipe', (req, res) => {
 });
 
 // Endpoint to serve recipe pages
-app.get('/recipe.html', (req, res) => {
+app.get('/recipe.html', (req, res) => {e
     console.log('Request for recipe page:');
     const recipeId = req.query.id; // Get the recipe ID from the query string
     const filePath = path.join(__dirname, 'recipes.json');
@@ -65,6 +65,7 @@ app.get('/recipe.html', (req, res) => {
             const half = Math.ceil(recipe.ingredients.length / 2);
             const ingredientsLeft = recipe.ingredients.slice(0, half);
             const ingredientsRight = recipe.ingredients.slice(half);
+            const description = recipe.steps.slice(0, 190) + '...';
             const fSteps = recipe.steps.replace(/\n/g, '<br>');
             // Generate the HTML content with Open Graph tags
             const html = `
@@ -75,16 +76,17 @@ app.get('/recipe.html', (req, res) => {
                 <link rel="stylesheet" href="recipe.css">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <title>${recipe.title}</title>
-                <meta name="description" content="${recipe.description}">
+                <meta name="description" content="${description}">
                 <meta property="og:title" content="${recipe.title}">
-                <meta property="og:description" content="${recipe.description}">
-                <meta property="og:image" content="${recipe.image}">
+                <meta property="og:description" content="${description}">
+                <meta property="og:image" content="http://tastiverse.cloud-ip.biz/${recipe.image}">
                 <meta property="og:url" content="${req.protocol}://${req.get('host')}${req.originalUrl}">
                 <meta name="twitter:card" content="summary_large_image">
                 <meta name="twitter:title" content="${recipe.title}">
-                <meta name="twitter:description" content="${recipe.description}">
-                <meta name="twitter:image" content="${recipe.image}">
-                <link rel="icon" type="image/x-icon" href="${recipe.image}">
+                <meta name="twitter:description" content="${description}">
+                <meta name="twitter:image" content="http://tastiverse.cloud-ip.biz/${recipe.image}">
+                <link rel="icon" type="image/x-icon" href="http://tastiverse.cloud-ip.biz/${recipe.image}">
+                <meta name="theme-color" content="#ECAB55">
             </head>
             <body>
  <div class="navbar" id="navbar">
