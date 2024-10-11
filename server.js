@@ -61,7 +61,17 @@ app.get('/recipe.html', (req, res) => {e
 
         const recipe = recipes[recipeId]; // Find the relevant recipe
 
+
         if (recipe) {
+            let recipeImg;
+            if (recipeId < 10) {
+                recipeImg = `http://tastiverse.cloud-ip.biz/${recipe.image}`
+            }
+            else {
+                recipeImg = recipe.image;
+            }
+            console.log(recipeId);
+            console.log(recipeImg);
             const half = Math.ceil(recipe.ingredients.length / 2);
             const ingredientsLeft = recipe.ingredients.slice(0, half);
             const ingredientsRight = recipe.ingredients.slice(half);
@@ -79,6 +89,7 @@ app.get('/recipe.html', (req, res) => {e
                 <meta name="description" content="${description}">
                 <meta property="og:title" content="${recipe.title}">
                 <meta property="og:description" content="${description}">
+<<<<<<< Updated upstream
                 <meta property="og:image" content="http://tastiverse.cloud-ip.biz/${recipe.image}">
                 <meta property="og:url" content="${req.protocol}://${req.get('host')}${req.originalUrl}">
                 <meta name="twitter:card" content="summary_large_image">
@@ -87,6 +98,16 @@ app.get('/recipe.html', (req, res) => {e
                 <meta name="twitter:image" content="http://tastiverse.cloud-ip.biz/${recipe.image}">
                 <link rel="icon" type="image/x-icon" href="http://tastiverse.cloud-ip.biz/${recipe.image}">
                 <meta name="theme-color" content="#ECAB55">
+=======
+                <meta property="og:image" content="${recipeImg}">
+                <meta property="og:url" content="${req.protocol}://http://tastiverse.cloud-ip.biz${req.originalUrl}">
+                <meta name="twitter:card" content="summary_large_image">
+                <meta name="twitter:title" content="${recipe.title}">
+                <meta name="twitter:description" content="${description}">
+                <meta name="twitter:image" content="${recipeImg}">
+                <meta name="theme-color" content="#ECAB55">
+                <link rel="icon" type="image/x-icon" href="${recipe.image}">
+>>>>>>> Stashed changes
             </head>
             <body>
  <div class="navbar" id="navbar">
