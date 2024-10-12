@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Helvetica";
+    font-weight: bold;
+    background-color: #F5E6CC;
+    width: 100%;
+}
+
+/* ==================================== NAVBAR ==================================== */
+.navbar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 10vh;
+    background: #333333;
+    margin-bottom: 1vh;
+}
+
+.navTxt {
+    color: #ECAB55;
+    font-size: 1.5vw;
+    text-align: left;
+    margin-right: 2.13vw;
+}
+
+.navLogo {
+    margin-left: 1.15vw;
+    margin-right: 2vw;
+    width: 11vw;
+    display: block;
+}
+
+input {
+    padding-left: 1vw;
+    margin-left: 13vw;
+    width: 27.56vw;
+    height: 5vh;
+    background: #FFFFFF;
+    color: #7A7A7A;
+    border-color: #232323;
+    border-width: 0.1vw;
+    border-style: solid;
+    border-radius: 2vw;
+    font-weight: 400;
+    font-size: 1.17vw;
+    text-align: left;
+}
+
+/* ==================================== MAIN ==================================== */
+a {
+    text-decoration: none;
+}
+
+.wrapper {
+    padding: 2vw;
+}
+
+.tips {
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+}
+
+.tip {
+    background-color: #fff8e6;
+    padding: 2vw;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tip h2 {
+    color: #ECAB55;
+    font-size: 1.8vw;
+    margin-bottom: 1vw;
+}
+
+.tip p {
+    font-size: 1.2vw;
+    color: #333;
+}
+
+footer {
+    background-color: #e6d9abd2;
+    height: 10vh;
+    position: relative; 
+    padding: 0 2.25vw;
+}
+
+footer p {
+    position: absolute;
+    left: 2.25vw;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: 400;
+    color: #4F4F4F;
+    margin: 0;
+}
+
+.icons {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.iLinks {
+    margin-top: 0.9vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.icons img {
+    height: 20px;
+}

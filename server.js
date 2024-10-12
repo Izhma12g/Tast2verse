@@ -104,7 +104,7 @@ app.get('/recipe', (req, res) => {
         <a href="index.html"><p class="navTxt">Home</p></a>
         <a class="navTxt" href="explore.html">Explore</a>
         <a class="navTxt" href="create.html">Create</a>
-        <p class="navTxt" style="color: #835d2b;">Kitchen Tips</p>
+        <a class="navTxt" href="tips.html">Kitchen Tips</a>
         <a class="navTxt" href="aboutus.html">About Us</a>
         <input type="text" placeholder="What recipe are you after?">
          <img onclick="search()" src="img/search.png" style="width: 18px; margin-left: -34px;" id="btn">
