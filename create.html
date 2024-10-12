@@ -11,8 +11,8 @@
         <a href="index.html"><img src="img/tLogo.png" class="navLogo"></a>
         <a href="index.html"><p class="navTxt">Home</p></a>
         <a class="navTxt" href="explore.html">Explore</a>
-        <a class="navTxt" href="create.html">Create</a>
-        <p class="navTxt" style="color: #835d2b;">Kitchen Tips</p>
+        <a class="navTxt" href="create.html" style="color: #835d2b;">Create</a>
+        <a class="navTxt" href="tips.html">Kitchen Tips</a>
         <a class="navTxt" href="aboutus.html">About Us</a>
         <input type="text" placeholder="What recipe are you after?">
         <img onclick="search()" src="img/search.png" style="width: 18px; margin-left: -34px;" id="btn">
@@ -49,13 +49,13 @@
                     </div>
                 </div>
                 <label for="image">Image URL:</label>
-                <input type="text" id="image" class="til" name="image">
+                <input type="text" id="image" class="til" name="image" required>
 
                 <label for="ingredients">Ingredients (comma separated):</label>
-                <textarea id="ingredients" name="ingredients" rows="4"></textarea>
+                <textarea id="ingredients" name="ingredients" rows="4" required></textarea>
 
                 <label for="steps">Step-by-step Instructions:</label>
-                <textarea id="steps" name="steps" rows="6"></textarea>
+                <textarea id="steps" name="steps" rows="6" required></textarea>
 
                 <div style="display: flex; align-items: center;">
                     <button type="submit" style="margin-right: 1.5vw;">Submit</button>

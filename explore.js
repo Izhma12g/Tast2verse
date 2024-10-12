@@ -13,7 +13,7 @@ async function loadRecipes() {
 
         recipes.forEach((recipe, index) => {
             const tile = document.createElement('a');
-            tile.href = `recipe.html?id=${index}`;
+            tile.href = `recipe?id=${index}`;
             tile.classList.add('fil');
             tile.setAttribute('data-category', recipe.category);
 

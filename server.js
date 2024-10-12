@@ -41,7 +41,7 @@ app.post('/saveRecipe', (req, res) => {
 });
 
 // Endpoint to serve recipe pages
-app.get('/recipe.html', (req, res) => {
+app.get('/recipe', (req, res) => {
     console.log('Request for recipe page:');
     const recipeId = req.query.id; // Get the recipe ID from the query string
     const filePath = path.join(__dirname, 'recipes.json');
@@ -61,10 +61,21 @@ app.get('/recipe.html', (req, res) => {
 
         const recipe = recipes[recipeId]; // Find the relevant recipe
 
+
         if (recipe) {
+            let recipeImg;
+            if (recipeId < 10) {
+                recipeImg = `http://tastiverse.cloud-ip.biz/${recipe.image}`
+            }
+            else {
+                recipeImg = recipe.image;
+            }
+            console.log(recipeId);
+            console.log(recipeImg);
             const half = Math.ceil(recipe.ingredients.length / 2);
             const ingredientsLeft = recipe.ingredients.slice(0, half);
             const ingredientsRight = recipe.ingredients.slice(half);
+            const description = recipe.steps.slice(0, 190) + '...';
             const fSteps = recipe.steps.replace(/\n/g, '<br>');
             // Generate the HTML content with Open Graph tags
             const html = `
@@ -75,15 +86,16 @@ app.get('/recipe.html', (req, res) => {
                 <link rel="stylesheet" href="recipe.css">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <title>${recipe.title}</title>
-                <meta name="description" content="${recipe.description}">
+                <meta name="description" content="${description}">
                 <meta property="og:title" content="${recipe.title}">
-                <meta property="og:description" content="${recipe.description}">
-                <meta property="og:image" content="${recipe.image}">
-                <meta property="og:url" content="${req.protocol}://${req.get('host')}${req.originalUrl}">
+                <meta property="og:description" content="${description}">
+                <meta property="og:image" content="${recipeImg}">
+                <meta property="og:url" content="${req.protocol}://http://tastiverse.cloud-ip.biz${req.originalUrl}">
                 <meta name="twitter:card" content="summary_large_image">
                 <meta name="twitter:title" content="${recipe.title}">
-                <meta name="twitter:description" content="${recipe.description}">
-                <meta name="twitter:image" content="${recipe.image}">
+                <meta name="twitter:description" content="${description}">
+                <meta name="twitter:image" content="${recipeImg}">
+                <meta name="theme-color" content="#ECAB55">
                 <link rel="icon" type="image/x-icon" href="${recipe.image}">
             </head>
             <body>
@@ -92,7 +104,7 @@ app.get('/recipe.html', (req, res) => {
         <a href="index.html"><p class="navTxt">Home</p></a>
         <a class="navTxt" href="explore.html">Explore</a>
         <a class="navTxt" href="create.html">Create</a>
-        <p class="navTxt" style="color: #835d2b;">Kitchen Tips</p>
+        <a class="navTxt" href="tips.html">Kitchen Tips</a>
         <a class="navTxt" href="aboutus.html">About Us</a>
         <input type="text" placeholder="What recipe are you after?">
          <img onclick="search()" src="img/search.png" style="width: 18px; margin-left: -34px;" id="btn">
@@ -122,7 +134,7 @@ app.get('/recipe.html', (req, res) => {
         </div>
         <div class="right">
             <p style="margin: 0 6px 4px 10px">Latest Recipes</p>
-            <a href="recipe.html?id=6">
+            <a href="recipe?id=6">
                 <div class="latest">
                     <hr>
                     <div class="latestAll">
@@ -139,7 +151,7 @@ app.get('/recipe.html', (req, res) => {
                     </div>  
                 </div> 
             </a>
-            <a href="recipe.html?id=9">
+            <a href="recipe?id=9">
                 <div class="latest">
                     <hr>
                     <div class="latestAll">
@@ -156,7 +168,7 @@ app.get('/recipe.html', (req, res) => {
                     </div>  
                 </div> 
             </a>
-            <a href="recipe.html?id=3">
+            <a href="recipe?id=3">
                 <div class="latest">
                     <hr>
                     <div class="latestAll">
@@ -173,7 +185,7 @@ app.get('/recipe.html', (req, res) => {
                     </div>  
                 </div> 
             </a>
-            <a href="recipe.html?id=4">
+            <a href="recipe?id=4">
                 <div class="latest">
                     <hr>
                     <div class="latestAll">
@@ -205,10 +217,8 @@ app.get('/recipe.html', (req, res) => {
             </div>
         </div>  
     </footer>
-        <script src="gen.js"></script>
-            </body>
-            </html>
-            `;
+    </body>
+</html>`;
             res.send(html); // Send the generated HTML as the response
         } else {
             res.status(404).send('Recipe not found');
